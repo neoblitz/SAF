@@ -1,0 +1,29 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//tcpudpdns_mix_298rec.sqlite' ..
+Found 298 events in database
+	PACKET_TCP - 248 events [ Fri Dec 18 20:43:52 2009 (1261169032) to Fri Dec 18 20:44:14 2009 (1261169054) ] 
+	PACKET_UDP - 38 events [ Fri Dec 18 20:43:56 2009 (1261169036) to Fri Dec 18 20:44:15 2009 (1261169055) ] 
+	PACKET_DNS - 12 events [ Fri Dec 18 20:43:57 2009 (1261169037) to Fri Dec 18 20:44:10 2009 (1261169050) ] 
+Creating temporary directory for storing state /tmp/temp
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/dnsreqres.b'..
+Processing model DNS_REQ_RES 
+    QUALIFIER matched 12 instances
+    State dns_req .. found 6 instances
+    State dns_res .. found 6 instances
+  Behavior b .. found 6 instances
+Model DNS_REQ_RES satisfied by 6 instances
+================================
+Instances satisfying DNS_REQ_RES
+================================
+Total Matching Instances: 6
+( 6 8 ) >> DNS_REQ_RES.b
+( 11 14 ) >> DNS_REQ_RES.b
+( 55 57 ) >> DNS_REQ_RES.b
+( 204 209 ) >> DNS_REQ_RES.b
+( 210 212 ) >> DNS_REQ_RES.b
+( 225 227 ) >> DNS_REQ_RES.b
+--------------------------------

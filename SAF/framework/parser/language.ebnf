@@ -1,0 +1,71 @@
+#-----------------------------
+# Behavior Expression Grammar
+#-----------------------------
+
+#-------------------------------------------------------------------------
+# !! NOTE !! : Remember to put the longest match first within a grouping ()
+#--------------------------------------------------------------------------
+
+startparens  := ts, '('
+endparens    := ts, ')'
+openbracket  := ts, '['
+closebracket := ts, ']'
+
+
+behavior_decl := ts, bexpr, ('\n')?
+bexpr := (operand1/sexpr/operand2),  ((behaviorops)?, (operand1/operand2/sexpr))*
+
+bstartsymbol  := '('
+bendsymbol    := ')'
+
+operand1      :=  ts, bstartsymbol, (behaviorops)?, (operand1/simpleoperand), 
+                  (behaviorops, (operand1/simpleoperand))*, ts, bendsymbol, 
+                  (bconstraints)?
+operand2      :=  (behaviorops)?, (simpleoperand), (behaviorops, operand1)?, ts
+simpleoperand := ts, 'not'?, identifier, ts 
+
+behaviorops   := bop, ts, ('[', ts, bopconstraint, ts, ']')?
+bop           := ts, ('olap'/'~>'/'[]'/'xor'/'and'/'dur'/'or'/'sw'/'ew'/'eq')
+bopconstraint := relop, ts, (float/number), sec_or_ms_or_usec?
+
+bconstraints  := ts, '[', ts, bkeyval, ts, ']'!
+bkeyval       := bconstraintkey, relop, ts,  value, sec_or_ms_or_usec?
+bconstraintkey:= ts, ('duration'/'_eventno'/'_limit'/'icount'/'bcount'/'rate'/'end'/'at')
+sec_or_ms_or_usec:= ts, ('SECS'/'MSECS'/'secs'/'msecs'/'SEC'/'MSEC'/'sec'/'msec'/'s'/'ms'/'S'/'MS')
+
+
+relop         := ts, ('>='/'<='/'>'/'='/'<'/'!=') 
+identifier    := ts, [a-zA-Z0-9], [a-zA-Z0-9_]*
+value         := ts, (rangevalue/string/float/number/identifier/depvalue/dynvalue/wildcard)
+number        := ts, [0-9]+
+rangevalue    := ts, number,':', number!
+float         := ts, number, '.', number!
+depvalue      := ts, '$', identifier, '.', identifier
+dynvalue      := ts, '$', [$0-9]+
+wildcard      := ts, ('_ANY_'/'*')
+ts            :=  [ \t\n]*
+
+#-------------------------
+# Model Output
+#-------------------------
+model_output := ts, model_id, ts, (startparens)?, (identifiers)?, (endparens)?
+model_id := ts, identifier
+identifiers := ts, identifier, ts, (',', identifiers)?
+
+#-------------------------
+# State Expression Grammar
+#-------------------------
+state_decl := ts, sexpr, ('\n')?
+sexpr := negation?, ts, (validexpr_3/validexpr_2/validexpr_1/nullexpr)
+negation := 'not'
+validexpr_1 := '{', ts, (baseform) ,ts, '}'!, ts, (sconstraint)?
+validexpr_2 :=  ts, (importform) ,ts, (sconstraint)?
+validexpr_3 := '{', ts, (importform) ,ts, '}'!, ts, (sconstraint)?
+nullexpr  := '{',ts,'}'!, ts, (sconstraint)?
+sconstraint := openbracket, bconstraintkey!, relop!, ts, (rangevalue/number)!, ts, closebracket!
+
+importform := importvariable, ts, '(', context?, baseform?, ts, ')'!
+baseform :=  (simpleavpair, ts, ','?)* 
+simpleavpair := identifier, relop, value
+context := ts, '$', identifier, ","?
+importvariable := identifier, '.', identifier 

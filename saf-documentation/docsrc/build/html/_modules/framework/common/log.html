@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>framework.common.log &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for framework.common.log</h1><div class="highlight"><pre>
+<span class="c"># log.py - Logging Module</span>
+<span class="c"># </span>
+<span class="c"># </span>
+<span class="c"># Copyright (C) 2011 University of Southern California.</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms are permitted</span>
+<span class="c"># provided that the above copyright notice and this paragraph are</span>
+<span class="c"># duplicated in all such forms and that any documentation, advertising</span>
+<span class="c"># materials, and other materials related to such distribution and use</span>
+<span class="c"># acknowledge that the software was developed by the University of</span>
+<span class="c"># Southern California, Information Sciences Institute.  The name of the</span>
+<span class="c"># University may not be used to endorse or promote products derived from</span>
+<span class="c"># this software without specific prior written permission.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND WITHOUT ANY EXPRESS OR IMPLIED</span>
+<span class="c"># WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF</span>
+<span class="c"># MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</span>
+<span class="c">#</span>
+<span class="c"># Author: Arun Viswanathan (aviswana@usc.edu)</span>
+<span class="c">#------------------------------------------------------------------------------</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">logging.handlers</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">LOGDIR</span> <span class="o">=</span> <span class="s">&quot;logs&quot;</span>
+<span class="n">BLOGFILE</span> <span class="o">=</span> <span class="n">LOGDIR</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s">&quot;behaviorlog&quot;</span> 
+<span class="n">SLOGFILE</span> <span class="o">=</span> <span class="n">LOGDIR</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s">&quot;statelog&quot;</span> 
+
+<div class="viewcode-block" id="Log"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log">[docs]</a><span class="k">class</span> <span class="nc">Log</span><span class="p">:</span>
+
+    <span class="c"># Logging Levels</span>
+    <span class="c"># Specifying a level (l) causes all levels &gt;= l to be printed</span>
+    <span class="n">LOGLEVELS</span> <span class="o">=</span> <span class="p">{</span>
+                 <span class="s">&#39;fine&#39;</span>    <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                 <span class="s">&#39;debug&#39;</span>   <span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="c">#10</span>
+                 <span class="s">&#39;state&#39;</span>   <span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+                 <span class="s">&#39;info&#39;</span>    <span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>  <span class="c">#20</span>
+                 <span class="s">&#39;warning&#39;</span> <span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="c">#30</span>
+                 <span class="s">&#39;error&#39;</span>   <span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">,</span>    <span class="c">#40 </span>
+                 <span class="s">&#39;critical&#39;</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">,</span> <span class="c">#50</span>
+                 <span class="s">&#39;behavior&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="c"># Special level for tracing behavior processing </span>
+                 <span class="s">&#39;sqlcmd&#39;</span> <span class="p">:</span> <span class="mi">91</span><span class="p">}</span> <span class="c"># Special level for producing sql commands used   </span>
+    <span class="c"># The value of DEBUG is 10. So keeping STATE at 15 makes sure that </span>
+    <span class="c"># selecting debug also outputs  STATE messages into statelog  </span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">levelname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levelname</span> <span class="o">=</span> <span class="n">levelname</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">addLevelName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">),</span>
+                              <span class="s">&#39;STATE&#39;</span><span class="p">)</span>
+
+        <span class="c"># Pick out the corresponding level from the hash</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levelname</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
+
+        <span class="c"># Create console handler </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ch</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ch</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
+
+        <span class="c"># Create formatter and add it to logger object</span>
+        <span class="c">#self.formatter = logging.Formatter(&quot;%(asctime)s - %(levelname)s - %(message)s&quot;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%(levelname)s</span><span class="s"> - </span><span class="si">%(message)s</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ch</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">formatter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ch</span><span class="p">)</span>
+        <span class="n">levels_to_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;STATE&#39;</span><span class="p">,</span> <span class="s">&#39;Level 90&#39;</span><span class="p">,</span> <span class="s">&#39;Level 91&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ch</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">FilterLevels</span><span class="p">(</span><span class="n">levels_to_filter</span><span class="p">))</span>
+
+        <span class="c"># Log all state messages to a file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rofile</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">RotatingFileHandler</span><span class="p">(</span><span class="n">SLOGFILE</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;w&quot;</span><span class="p">,</span>
+                                                    <span class="n">backupCount</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rofile</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rofile</span><span class="p">)</span>
+        <span class="n">levels_to_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;INFO&#39;</span><span class="p">,</span> <span class="s">&#39;CRITICAL&#39;</span><span class="p">,</span> <span class="s">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="s">&#39;WARNING&#39;</span><span class="p">,</span> <span class="s">&#39;ERROR&#39;</span><span class="p">,</span> 
+                            <span class="s">&#39;Level 90&#39;</span><span class="p">,</span> <span class="s">&#39;Level 5&#39;</span><span class="p">,</span> 
+                            <span class="s">&#39;Level 91&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rofile</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">FilterLevels</span><span class="p">(</span><span class="n">levels_to_filter</span><span class="p">))</span>
+        
+        <span class="c"># Log the behavior processing to file</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">bfile</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">RotatingFileHandler</span><span class="p">(</span><span class="n">BLOGFILE</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;w&quot;</span><span class="p">,</span>
+                                                    <span class="n">backupCount</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bfile</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;behavior&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bfile</span><span class="p">)</span>
+        <span class="n">levels_to_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;INFO&#39;</span><span class="p">,</span> <span class="s">&#39;CRITICAL&#39;</span><span class="p">,</span> <span class="s">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="s">&#39;WARNING&#39;</span><span class="p">,</span> <span class="s">&#39;ERROR&#39;</span><span class="p">,</span> 
+                            <span class="s">&#39;STATE&#39;</span><span class="p">,</span> <span class="s">&#39;Level 5&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bfile</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">FilterLevels</span><span class="p">(</span><span class="n">levels_to_filter</span><span class="p">))</span>
+
+
+<div class="viewcode-block" id="Log.setlevel"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.setlevel">[docs]</a>    <span class="k">def</span> <span class="nf">setlevel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levelname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">levelname</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.debug"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.debug">[docs]</a>    <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">linenumber</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">findCaller</span><span class="p">()</span>
+            <span class="n">cstring</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">linenumber</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span>
+
+            <span class="n">tolog</span> <span class="o">=</span> <span class="n">cstring</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">tolog</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.fine"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.fine">[docs]</a>    <span class="k">def</span> <span class="nf">fine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;fine&#39;</span><span class="p">)):</span>
+          <span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">linenumber</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">findCaller</span><span class="p">()</span>
+          <span class="n">cstring</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">linenumber</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span>
+          <span class="n">tolog</span> <span class="o">=</span> <span class="n">cstring</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;fine&#39;</span><span class="p">),</span> <span class="n">tolog</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.info"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">):</span>
+          <span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">linenumber</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">findCaller</span><span class="p">()</span>
+          <span class="n">cstring</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">linenumber</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span>
+          <span class="n">tolog</span> <span class="o">=</span> <span class="n">cstring</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">tolog</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.critical"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.critical">[docs]</a>    <span class="k">def</span> <span class="nf">critical</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+       <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.error"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.error">[docs]</a>    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">):</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.warning"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.warning">[docs]</a>    <span class="k">def</span> <span class="nf">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">):</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.state"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.state">[docs]</a>    <span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span>  <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">)):</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">),</span> <span class="n">log</span><span class="p">)</span>
+            </div>
+<div class="viewcode-block" id="Log.behavior"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.behavior">[docs]</a>    <span class="k">def</span> <span class="nf">behavior</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numtabs</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span>  <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;behavior&#39;</span><span class="p">)):</span>
+            <span class="n">tabstop</span> <span class="o">=</span> <span class="s">&quot;  &quot;</span>
+            <span class="n">tolog</span> <span class="o">=</span> <span class="n">tabstop</span> <span class="o">*</span> <span class="n">numtabs</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;behavior&#39;</span><span class="p">),</span> <span class="n">tolog</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.sqlcmd"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.sqlcmd">[docs]</a>    <span class="k">def</span> <span class="nf">sqlcmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
+        <span class="k">if</span>  <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;sqlcmd&#39;</span><span class="p">)):</span>
+            <span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">linenumber</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">findCaller</span><span class="p">()</span>
+            <span class="n">cstring</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">linenumber</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> \
+                      <span class="nb">str</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span>
+            <span class="n">tolog</span> <span class="o">=</span> <span class="n">cstring</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LOGLEVELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;sqlcmd&#39;</span><span class="p">),</span> <span class="n">tolog</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Log.close"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Log.isEnabledFor"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.Log.isEnabledFor">[docs]</a>    <span class="k">def</span> <span class="nf">isEnabledFor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lvl</span><span class="p">):</span>
+        <span class="k">return</span>  <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">lvl</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="FilterLevels"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.FilterLevels">[docs]</a><span class="k">class</span> <span class="nc">FilterLevels</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels_to_filter</span><span class="p">):</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levels_to_filter</span> <span class="o">=</span> <span class="n">levels_to_filter</span>
+
+<div class="viewcode-block" id="FilterLevels.filter"><a class="viewcode-back" href="../../../srcmodules/framework.common.html#framework.common.log.FilterLevels.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">levelname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels_to_filter</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="mi">1</span>
+</pre></div></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

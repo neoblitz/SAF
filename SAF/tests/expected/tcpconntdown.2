@@ -1,0 +1,51 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//httpflows_1077rec.sqlite' ..
+Found 1077 events in database
+	PACKET_TCP - 1077 events [ Thu Aug  6 20:18:35 2009 (1249589915) to Thu Aug  6 20:19:47 2009 (1249589987) ] 
+Creating temporary directory for storing state /tmp/temp
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/tcpconntdown.b'..
+Processing model TCP_CONNTDOWN 
+    QUALIFIER matched 1077 instances
+    State tcp_pkt_piggyfin .. found 54 instances
+    State tcp_pkt_finack .. found 25 instances
+    State tcp_pkt_ack .. found 25 instances
+  Behavior bpiggy .. found 25 instances
+    QUALIFIER matched 1077 instances
+    State tcp_pkt_fin .. found 0 instances
+    State tcp_pkt_ack .. found 0 instances
+  Behavior bclean .. found 0 instances
+Model TCP_CONNTDOWN satisfied by 25 instances
+==================================
+Instances satisfying TCP_CONNTDOWN
+==================================
+Total Matching Instances: 25
+( ( 102 104 ) 105 ) >> TCP_CONNTDOWN.bpiggy
+( ( 113 114 ) 115 ) >> TCP_CONNTDOWN.bpiggy
+( ( 125 126 ) 127 ) >> TCP_CONNTDOWN.bpiggy
+( ( 135 136 ) 137 ) >> TCP_CONNTDOWN.bpiggy
+( ( 149 150 ) 157 ) >> TCP_CONNTDOWN.bpiggy
+( ( 690 722 ) 730 ) >> TCP_CONNTDOWN.bpiggy
+( ( 691 723 ) 733 ) >> TCP_CONNTDOWN.bpiggy
+( ( 692 719 ) 731 ) >> TCP_CONNTDOWN.bpiggy
+( ( 693 724 ) 737 ) >> TCP_CONNTDOWN.bpiggy
+( ( 694 721 ) 732 ) >> TCP_CONNTDOWN.bpiggy
+( ( 696 920 ) 921 ) >> TCP_CONNTDOWN.bpiggy
+( ( 697 720 ) 729 ) >> TCP_CONNTDOWN.bpiggy
+( ( 702 718 ) 728 ) >> TCP_CONNTDOWN.bpiggy
+( ( 706 917 ) 924 ) >> TCP_CONNTDOWN.bpiggy
+( ( 707 918 ) 925 ) >> TCP_CONNTDOWN.bpiggy
+( ( 708 919 ) 927 ) >> TCP_CONNTDOWN.bpiggy
+( ( 712 717 ) 727 ) >> TCP_CONNTDOWN.bpiggy
+( ( 714 716 ) 726 ) >> TCP_CONNTDOWN.bpiggy
+( ( 908 916 ) 926 ) >> TCP_CONNTDOWN.bpiggy
+( ( 910 915 ) 923 ) >> TCP_CONNTDOWN.bpiggy
+( ( 911 914 ) 922 ) >> TCP_CONNTDOWN.bpiggy
+( ( 928 1034 ) 1036 ) >> TCP_CONNTDOWN.bpiggy
+( ( 929 1035 ) 1037 ) >> TCP_CONNTDOWN.bpiggy
+( ( 1051 1056 ) 1057 ) >> TCP_CONNTDOWN.bpiggy
+( ( 1053 1055 ) 1058 ) >> TCP_CONNTDOWN.bpiggy
+----------------------------------

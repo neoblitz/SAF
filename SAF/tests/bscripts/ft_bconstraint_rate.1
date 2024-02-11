@@ -1,0 +1,13 @@
+[header]
+NAMESPACE = TESTS
+NAME = FT_BCONSTRAINT_RATE_1
+QUALIFIER = {eventtype = 'PACKET_TCP'}
+
+[states]
+ip_pkt_sd = {sipaddr = $1, dipaddr = $2, protocol=$3}[bcount>1]
+
+[behavior]
+b  = (ip_pkt_sd)[rate > 1]
+
+[model]
+IP_PKTPAIR(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = b 

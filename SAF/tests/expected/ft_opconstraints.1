@@ -1,0 +1,179 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//tcpudpdns_mix_20rec.sqlite' ..
+Found 63 events in database
+	PACKET_TCP - 13 events [ Fri Dec 18 20:43:52 2009 (1261169032) to Fri Dec 18 20:43:57 2009 (1261169037) ] 
+	PACKET_UDP - 38 events [ Fri Dec 18 20:43:56 2009 (1261169036) to Fri Dec 18 20:44:15 2009 (1261169055) ] 
+	PACKET_DNS - 12 events [ Fri Dec 18 20:43:57 2009 (1261169037) to Fri Dec 18 20:44:10 2009 (1261169050) ] 
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/ft_opconstraints.1.b'..
+Processing model TCP_CONNSETUP_WITHIN 
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b1 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b2 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b4 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b5 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b6 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b7 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b8 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b9 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b11 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b12 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b13 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b14 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 0 instances
+  Behavior b3 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior b10 .. found 0 instances
+Model TCP_CONNSETUP_WITHIN satisfied by 9 instances
+=========================================
+Instances satisfying TCP_CONNSETUP_WITHIN
+=========================================
+Total Matching Instances: 9
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b1
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b14
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b2
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b4
+( 10 ( 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b5
+( 10 ( 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b6
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b7
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b8
+( 10 ( 17 ) 18 ) >> TCP_CONNSETUP_WITHIN.b9
+-----------------------------------------
+Processing model TCP_CONNSETUP_AFTER 
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 0 instances
+  Behavior a1 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a2 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a3 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a4 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a5 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a6 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a7 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a8 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior a9 .. found 1 instances
+Model TCP_CONNSETUP_AFTER satisfied by 6 instances
+========================================
+Instances satisfying TCP_CONNSETUP_AFTER
+========================================
+Total Matching Instances: 6
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_AFTER.a2
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_AFTER.a3
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_AFTER.a4
+( 10 ( 17 ) 18 ) >> TCP_CONNSETUP_AFTER.a5
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_AFTER.a8
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_AFTER.a9
+----------------------------------------
+Processing model TCP_CONNSETUP_WITHIN_AFTER 
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior aw1 .. found 1 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 0 instances
+  Behavior aw2 .. found 0 instances
+    QUALIFIER matched 13 instances
+    State tcp_pkt_syn .. found 2 instances
+    State tcp_pkt_synack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior aw3 .. found 1 instances
+Model TCP_CONNSETUP_WITHIN_AFTER satisfied by 2 instances
+===============================================
+Instances satisfying TCP_CONNSETUP_WITHIN_AFTER
+===============================================
+Total Matching Instances: 2
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN_AFTER.aw1
+( ( 10 17 ) 18 ) >> TCP_CONNSETUP_WITHIN_AFTER.aw3
+-----------------------------------------------

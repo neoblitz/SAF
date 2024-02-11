@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Semantic Analysis Framework &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="#" />
+    <link rel="next" title="Project Modules" href="srcmodules/modules.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="srcmodules/modules.html" title="Project Modules"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Semantic Analysis Framework</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="srcmodules/modules.html"
+                        title="next chapter">Project Modules</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="semantic-analysis-framework">
+<h1>Semantic Analysis Framework<a class="headerlink" href="#semantic-analysis-framework" title="Permalink to this headline">¶</a></h1>
+<p><em>SAF</em> is a framework for offline data analysis of networked and distributed
+system data. SAF enables users to analyse and reason over data using
+semantically meaningful abstractions and thus at a level closer to their
+understanding of system operation. Contrast this with the traditional analysis
+techniques that require users to operate over data at the low-level of
+attributes and values to infer semantic relationships from data.</p>
+<p>Analysis using SAF can be broken down into two distinct phases.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Modeling phase</strong></dt>
+<dd><p class="first">SAF enables system or domain experts to encode their high-level understanding
+of system behavior as &#8216;&#8217;&#8216;abstract models&#8217;&#8216;&#8217; over data.
+For example, the [source:/trunk/SAF/knowbase/net/base_proto/tcpconnsetup.b TCP connection setup model]
+captures the abstract behavior of a TCP connection setup and the
+[wiki:ExampleDNSKaminsky DNS Kaminsky Model] captures
+behavior of the DNS Kaminsky experiment.</p>
+<p class="last">Models are written in a simple
+[wiki:logic-based-modelling logic-based modeling language]. The modeling
+language provides semantically relevant constructs to express relationships
+such as causality, ordering, concurrency, exclusions, combinations and
+dependency relationships between high-level system operations.</p>
+</dd>
+<dt><strong>Analysis phase</strong></dt>
+<dd>Models drive analysis over data. Given timestamped raw-data, in the form of
+syslogs, packet dumps, alert logs, kernel logs, or application logs, the
+framework enables users to analyse the data by encoding their high-level
+questions directly as semantically meaningful models over data. Users can
+either write their own models from scratch or build one by composing
+existing models from the knowledge-base.</dd>
+</dl>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li>Read <a class="reference internal" href="files/comparison.html"><em>Comparison of SAF with other traditional approaches</em></a>.</li>
+<li>Read our <a class="reference external" href="http://www.usenix.org/events/nsdi11/tech/full_papers/Viswanathan.pdf">NSDI 2011 Semantic Analysis Framework paper</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><dl class="docutils">
+<dt><a class="reference internal" href="files/comparison.html"><em>Getting Started</em></a></dt>
+<dd>Simple documentation</dd>
+<dt>Details</dt>
+<dd>More details</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="srcmodules/modules.html">Project Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="srcmodules/framework.html">framework Package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="srcmodules/modules.html" title="Project Modules"
+             >next</a> |</li>
+        <li><a href="#">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

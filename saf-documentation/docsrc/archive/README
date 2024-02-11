@@ -1,0 +1,3 @@
+To generate documentation using the source code run
+	
+ $ doxygen doxyconfig

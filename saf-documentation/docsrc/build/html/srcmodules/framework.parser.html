@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>parser Package &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../index.html" />
+    <link rel="up" title="framework Package" href="framework.html" />
+    <link rel="next" title="presentation Package" href="framework.presentation.html" />
+    <link rel="prev" title="objects Package" href="framework.objects.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="framework.presentation.html" title="presentation Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="framework.objects.html" title="objects Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="modules.html" >Project Modules</a> &raquo;</li>
+          <li><a href="framework.html" accesskey="U">framework Package</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">parser Package</a><ul>
+<li><a class="reference internal" href="#behaviorparser-module"><code class="docutils literal"><span class="pre">behaviorparser</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.parser.language"><code class="docutils literal"><span class="pre">language</span></code> Module</a></li>
+<li><a class="reference internal" href="#modelparser-module"><code class="docutils literal"><span class="pre">modelparser</span></code> Module</a></li>
+<li><a class="reference internal" href="#parser-module"><code class="docutils literal"><span class="pre">parser</span></code> Module</a></li>
+<li><a class="reference internal" href="#stateparser-module"><code class="docutils literal"><span class="pre">stateparser</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="framework.objects.html"
+                        title="previous chapter">objects Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="framework.presentation.html"
+                        title="next chapter">presentation Package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/srcmodules/framework.parser.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parser-package">
+<h1>parser Package<a class="headerlink" href="#parser-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="behaviorparser-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">behaviorparser</span></code> Module<a class="headerlink" href="#behaviorparser-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-framework.parser.language">
+<span id="language-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">language</span></code> Module<a class="headerlink" href="#module-framework.parser.language" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="framework.parser.language.BconstraintTokens">
+<em class="property">class </em><code class="descname">BconstraintTokens</code><a class="reference internal" href="../_modules/framework/parser/language.html#BconstraintTokens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.parser.language.BconstraintTokens" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="framework.parser.language.BconstraintTokens.CONSTRAINTS">
+<code class="descname">CONSTRAINTS</code><em class="property"> = ['at', 'duration', 'end', 'icount', 'bcount', 'rate', '_limit', '_eventno']</em><a class="headerlink" href="#framework.parser.language.BconstraintTokens.CONSTRAINTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="framework.parser.language.KeywordTokens">
+<em class="property">class </em><code class="descname">KeywordTokens</code><a class="reference internal" href="../_modules/framework/parser/language.html#KeywordTokens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.parser.language.KeywordTokens" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="framework.parser.language.KeywordTokens.KEYWORD_DEP">
+<code class="descname">KEYWORD_DEP</code><em class="property"> = 'IMPORT'</em><a class="headerlink" href="#framework.parser.language.KeywordTokens.KEYWORD_DEP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.KeywordTokens.KEYWORD_INIT">
+<code class="descname">KEYWORD_INIT</code><em class="property"> = 'QUALIFIER'</em><a class="headerlink" href="#framework.parser.language.KeywordTokens.KEYWORD_INIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.KeywordTokens.KEYWORD_NAME">
+<code class="descname">KEYWORD_NAME</code><em class="property"> = 'NAME'</em><a class="headerlink" href="#framework.parser.language.KeywordTokens.KEYWORD_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.KeywordTokens.KEYWORD_NAMESPACE">
+<code class="descname">KEYWORD_NAMESPACE</code><em class="property"> = 'NAMESPACE'</em><a class="headerlink" href="#framework.parser.language.KeywordTokens.KEYWORD_NAMESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.KeywordTokens.KEYWORD_ROOT">
+<code class="descname">KEYWORD_ROOT</code><em class="property"> = 'ROOT'</em><a class="headerlink" href="#framework.parser.language.KeywordTokens.KEYWORD_ROOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="framework.parser.language.OpconstraintTokens">
+<em class="property">class </em><code class="descname">OpconstraintTokens</code><a class="reference internal" href="../_modules/framework/parser/language.html#OpconstraintTokens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.parser.language.OpconstraintTokens" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="framework.parser.language.OpconstraintTokens.CONSTRAINTS">
+<code class="descname">CONSTRAINTS</code><em class="property"> = ['&gt;=', '&lt;=', '&gt;', '=', '&lt;', '!=']</em><a class="headerlink" href="#framework.parser.language.OpconstraintTokens.CONSTRAINTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="framework.parser.language.OperatorTokens">
+<em class="property">class </em><code class="descname">OperatorTokens</code><a class="reference internal" href="../_modules/framework/parser/language.html#OperatorTokens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.parser.language.OperatorTokens" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.ALWAYS">
+<code class="descname">ALWAYS</code><em class="property"> = '[]'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.ALWAYS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.AND">
+<code class="descname">AND</code><em class="property"> = 'and'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.AND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.DUR">
+<code class="descname">DUR</code><em class="property"> = 'dur'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.DUR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.EQ">
+<code class="descname">EQ</code><em class="property"> = 'eq'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.EQ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.EW">
+<code class="descname">EW</code><em class="property"> = 'ew'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.EW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.LEADSTO">
+<code class="descname">LEADSTO</code><em class="property"> = '~&gt;'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.LEADSTO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.NOT">
+<code class="descname">NOT</code><em class="property"> = 'not'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.NOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.OR">
+<code class="descname">OR</code><em class="property"> = 'or'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.OR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.OVERLAP">
+<code class="descname">OVERLAP</code><em class="property"> = 'olap'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.OVERLAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.PARALLEL_SPEC">
+<code class="descname">PARALLEL_SPEC</code><em class="property"> = 'or'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.PARALLEL_SPEC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.SUMMOUTPUT">
+<code class="descname">SUMMOUTPUT</code><em class="property"> = '&gt;&gt;'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.SUMMOUTPUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.SW">
+<code class="descname">SW</code><em class="property"> = 'sw'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.SW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.OperatorTokens.XOR">
+<code class="descname">XOR</code><em class="property"> = 'xor'</em><a class="headerlink" href="#framework.parser.language.OperatorTokens.XOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="framework.parser.language.SectionTokens">
+<em class="property">class </em><code class="descname">SectionTokens</code><a class="reference internal" href="../_modules/framework/parser/language.html#SectionTokens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.parser.language.SectionTokens" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="framework.parser.language.SectionTokens.SECTION_BEHAVIOR">
+<code class="descname">SECTION_BEHAVIOR</code><em class="property"> = 'behavior'</em><a class="headerlink" href="#framework.parser.language.SectionTokens.SECTION_BEHAVIOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.SectionTokens.SECTION_HEADER">
+<code class="descname">SECTION_HEADER</code><em class="property"> = 'header'</em><a class="headerlink" href="#framework.parser.language.SectionTokens.SECTION_HEADER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.SectionTokens.SECTION_MODEL">
+<code class="descname">SECTION_MODEL</code><em class="property"> = 'model'</em><a class="headerlink" href="#framework.parser.language.SectionTokens.SECTION_MODEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="framework.parser.language.SectionTokens.SECTION_STATES">
+<code class="descname">SECTION_STATES</code><em class="property"> = 'states'</em><a class="headerlink" href="#framework.parser.language.SectionTokens.SECTION_STATES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="modelparser-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">modelparser</span></code> Module<a class="headerlink" href="#modelparser-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="parser-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">parser</span></code> Module<a class="headerlink" href="#parser-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="stateparser-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">stateparser</span></code> Module<a class="headerlink" href="#stateparser-module" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="framework.presentation.html" title="presentation Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="framework.objects.html" title="objects Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="modules.html" >Project Modules</a> &raquo;</li>
+          <li><a href="framework.html" >framework Package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

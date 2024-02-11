@@ -1,0 +1,32 @@
+
+
+
+!!! 
+    NOTES: 
+        1. Use the sphinx generated documentation only to browse the 
+           source-code modules.
+           
+           Start from docsrc/build/html/index.html
+
+        2. For documentation related to the framework and usage refer 
+           to pdfs under wikipdfs/thirdeye.deterlab.net/
+!!! 
+
+
+Documentation Notes
+===================
+
+ * Documentation is managed using Sphinx.
+
+ sudo easy_install -U Sphinx
+  
+Command used to generate documentation out of SAF source code
+==============================================================
+
+ cd utils/
+ python generate_modules.py ../../SAF/framework/  -d ../docsrc/source/srcmodules -s "rst" -f
+ 
+ To generate HTML
+ ===============
+ cd ../docsrc/
+ make html

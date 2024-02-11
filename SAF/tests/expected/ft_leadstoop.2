@@ -1,0 +1,38 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//nsdipaper_casestudy1_2sec_data.sqlite' ..
+Found 27597 events in database
+	PACKET_ICMP - 2080 events [ Sat Jun 29 22:35:56 2002 (1025390156) to Sat Jun 29 22:35:57 2002 (1025390157) ] 
+	PACKET_TCP - 17897 events [ Sat Jun 29 22:35:56 2002 (1025390156) to Sat Jun 29 22:35:57 2002 (1025390157) ] 
+	PACKET_UDP - 1598 events [ Sat Jun 29 22:35:56 2002 (1025390156) to Sat Jun 29 22:35:57 2002 (1025390157) ] 
+	PACKET_DNS - 6022 events [ Sat Jun 29 22:35:56 2002 (1025390156) to Sat Jun 29 22:35:57 2002 (1025390157) ] 
+Creating temporary directory for storing state /tmp/temp
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/ft_leadstoop.2.b'..
+Processing model PKTPAIR 
+    QUALIFIER matched 100 instances
+    State ip_pkt_sd .. found 100 instances
+    State ip_pkt_cons .. found 3 instances
+  Behavior b .. found 3 instances
+Model PKTPAIR satisfied by 3 instances
+============================
+Instances satisfying PKTPAIR
+============================
+Total Matching Instances: 3
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+     eventno      |    eventtype     |    timestamp     |  timestampusec   |     sipaddr      |     dipaddr      |     protocol     |      sport       
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                             Behavior: PKTPAIR.b(2 events)                                                              
+        1         |    PACKET_TCP    |    1025390156    |       130        |  133.225.80.72   |  80.80.248.122   |        6         |       6346       
+        31        |   PACKET_ICMP    |    1025390156    |       2676       |  201.199.184.56  |  87.231.216.115  |        1         |                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                             Behavior: PKTPAIR.b(2 events)                                                              
+        2         |    PACKET_TCP    |    1025390156    |       324        | 201.114.103.20.. |  87.134.105.167  |        6         |      64623       
+        36        |   PACKET_ICMP    |    1025390156    |       3254       |  201.199.184.56  |  87.231.216.115  |        1         |                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                             Behavior: PKTPAIR.b(2 events)                                                              
+        3         |    PACKET_TCP    |    1025390156    |       329        |  203.79.152.208  |   80.80.180.87   |        6         |      32780       
+        44        |   PACKET_ICMP    |    1025390156    |       3659       |  201.199.184.56  |  87.231.216.115  |        1         |                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------

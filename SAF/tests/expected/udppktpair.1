@@ -1,0 +1,28 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//tcpudpdns_mix_20rec.sqlite' ..
+Found 63 events in database
+	PACKET_TCP - 13 events [ Fri Dec 18 20:43:52 2009 (1261169032) to Fri Dec 18 20:43:57 2009 (1261169037) ] 
+	PACKET_UDP - 38 events [ Fri Dec 18 20:43:56 2009 (1261169036) to Fri Dec 18 20:44:15 2009 (1261169055) ] 
+	PACKET_DNS - 12 events [ Fri Dec 18 20:43:57 2009 (1261169037) to Fri Dec 18 20:44:10 2009 (1261169050) ] 
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/udppktpair.b'..
+Processing model UDP_PKTPAIR 
+    QUALIFIER matched 12 instances
+    State udp_pkt_sd .. found 12 instances
+    State udp_pkt_ds .. found 6 instances
+  Behavior b .. found 6 instances
+Model UDP_PKTPAIR satisfied by 6 instances
+================================
+Instances satisfying UDP_PKTPAIR
+================================
+Total Matching Instances: 6
+( 6 8 ) >> UDP_PKTPAIR.b
+( 11 14 ) >> UDP_PKTPAIR.b
+( 55 57 ) >> UDP_PKTPAIR.b
+( 204 209 ) >> UDP_PKTPAIR.b
+( 210 212 ) >> UDP_PKTPAIR.b
+( 225 227 ) >> UDP_PKTPAIR.b
+--------------------------------

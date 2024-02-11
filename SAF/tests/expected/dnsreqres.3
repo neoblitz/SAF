@@ -1,0 +1,29 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//dnsflows_100rec.sqlite' ..
+Found 100 events in database
+	PACKET_DNS - 100 events [ Wed Jun  2 21:51:23 2010 (1275515483) to Wed Jun  2 21:51:23 2010 (1275515483) ] 
+Creating temporary directory for storing state /tmp/temp
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/dnsreqres.b'..
+Processing model DNS_REQ_RES 
+    QUALIFIER matched 100 instances
+    State dns_req .. found 9 instances
+    State dns_res .. found 8 instances
+  Behavior b .. found 8 instances
+Model DNS_REQ_RES satisfied by 8 instances
+================================
+Instances satisfying DNS_REQ_RES
+================================
+Total Matching Instances: 8
+( 1 8 ) >> DNS_REQ_RES.b
+( 13 20 ) >> DNS_REQ_RES.b
+( 25 32 ) >> DNS_REQ_RES.b
+( 37 44 ) >> DNS_REQ_RES.b
+( 49 56 ) >> DNS_REQ_RES.b
+( 61 69 ) >> DNS_REQ_RES.b
+( 73 80 ) >> DNS_REQ_RES.b
+( 85 92 ) >> DNS_REQ_RES.b
+--------------------------------

@@ -1,0 +1,23 @@
+#
+# Test all the conditions for 'bcount' when used as a state constraint with   
+# behaviors from other models imported as states.
+#
+################################################################################
+
+[header]
+NAMESPACE = TESTS
+NAME = FT_SCONSTRAINT_BCOUNT_3
+QUALIFIER = {eventtype = '*'}[_limit=20]
+IMPORT = NET.APP_PROTO.DNSREQRES
+
+[states]
+# Find each satisfying event and report them as instances containing a single event
+S1 = DNSREQRES.b()  
+
+[behavior]
+# Current limitation. Using states directly in model definition below renders the 
+# QUALIFIER ineffective. Ticket #7.
+bS1 = S1
+
+[model]
+Model_S1(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS1 

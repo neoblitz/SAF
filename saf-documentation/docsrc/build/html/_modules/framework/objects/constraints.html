@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>framework.objects.constraints &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for framework.objects.constraints</h1><div class="highlight"><pre>
+<span class="c"># </span>
+<span class="c"># constraints.py - Generic class for representing constraints</span>
+<span class="c"># </span>
+<span class="c"># Copyright (C) 2011 University of Southern California.</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms are permitted</span>
+<span class="c"># provided that the above copyright notice and this paragraph are</span>
+<span class="c"># duplicated in all such forms and that any documentation, advertising</span>
+<span class="c"># materials, and other materials related to such distribution and use</span>
+<span class="c"># acknowledge that the software was developed by the University of</span>
+<span class="c"># Southern California, Information Sciences Institute.  The name of the</span>
+<span class="c"># University may not be used to endorse or promote products derived from</span>
+<span class="c"># this software without specific prior written permission.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND WITHOUT ANY EXPRESS OR IMPLIED</span>
+<span class="c"># WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF</span>
+<span class="c"># MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</span>
+<span class="c">#</span>
+<span class="c"># Author: Arun Viswanathan (aviswana@usc.edu)</span>
+<span class="c">#------------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="ConstraintObject"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.constraints.ConstraintObject">[docs]</a><span class="k">class</span> <span class="nc">ConstraintObject</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Generic Class for Constraints &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">behaviorname</span><span class="p">,</span> <span class="n">clist</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">behaviorname</span> <span class="o">=</span> <span class="n">behaviorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valid_constraints</span> <span class="o">=</span> <span class="n">clist</span>
+        <span class="c"># The default attribute makes sure that only constraint </span>
+        <span class="c"># is associated for now. Will change this when the semantics of</span>
+        <span class="c"># multiple constraints are worked out </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="bp">None</span>
+        
+        <span class="c"># Flag to control if constraints should be applied or only checked for</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_flag</span> <span class="o">=</span> <span class="bp">False</span>
+
+<div class="viewcode-block" id="ConstraintObject.set_constraint"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.constraints.ConstraintObject.set_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">set_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">qual</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_constraints</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="s">&quot;Unrecognized keyword &#39;</span><span class="si">%s</span><span class="s">&#39;&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">qual</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="n">key</span>
+</div>
+<div class="viewcode-block" id="ConstraintObject.set_apply_flag"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.constraints.ConstraintObject.set_apply_flag">[docs]</a>    <span class="k">def</span> <span class="nf">set_apply_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_flag</span> <span class="o">=</span> <span class="bp">True</span> 
+        </div>
+<div class="viewcode-block" id="ConstraintObject.get_apply_flag"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.constraints.ConstraintObject.get_apply_flag">[docs]</a>    <span class="k">def</span> <span class="nf">get_apply_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_flag</span>
+</div>
+<div class="viewcode-block" id="ConstraintObject.get_active_constraints"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.constraints.ConstraintObject.get_active_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">get_active_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    </div>
+<div class="viewcode-block" id="ConstraintObject.has_constraint"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.constraints.ConstraintObject.has_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">has_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">==</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="ConstraintObject.get_constraint"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.constraints.ConstraintObject.get_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">get_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">key</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span>
+        <span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">cval</span><span class="p">,</span> <span class="n">cqual</span><span class="p">)</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">cval</span><span class="p">,</span> <span class="n">cqual</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;[&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">val</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">v</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;]&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

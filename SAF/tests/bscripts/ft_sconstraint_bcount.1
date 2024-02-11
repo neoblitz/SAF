@@ -1,0 +1,117 @@
+#
+# Test all the conditions for 'bcount' when used as a state constraint with   
+# independent states specified in the basic form.
+#
+################################################################################
+[header]
+NAMESPACE = TESTS
+NAME = FT_SCONSTRAINT_BCOUNT_1
+QUALIFIER = {eventtype = '*'}[_limit=20]
+
+[states]
+#-------------------------------------------------------------------------------
+# Find each satisfying event and report them as instances containing a single 
+# event
+#-------------------------------------------------------------------------------
+S1 = {sipaddr='10.1.11.2'}
+
+#-------------------------------------------------------------------------------
+# Find each satisfying event and report them as instances containing a single 
+# event
+#-------------------------------------------------------------------------------
+S2 = {sipaddr='10.1.11.2', dipaddr='*'}
+
+#-------------------------------------------------------------------------------
+# Find each satisfying event and report them as instances containing a single 
+# event
+#-------------------------------------------------------------------------------
+S3 = {sipaddr='10.1.11.2', dipaddr='*'}[bcount=1]
+
+#-------------------------------------------------------------------------------
+# Find each satisfying event and report them as instances containing exactly 10 
+# events
+# If there are less than 10 matching events nothing will be returned.
+# If there are more than 10 matching events (in multiples of 10) then those 
+# many multiples
+# will be returned.   
+#-------------------------------------------------------------------------------
+S4 = {sipaddr='10.1.6.3', dipaddr='*'}[bcount=10]
+
+#-------------------------------------------------------------------------------
+# Find satisfying events and group them into a single instance if there are 
+# more than 1 matches
+#-------------------------------------------------------------------------------
+S5 = {sipaddr='10.1.11.2', dipaddr='*'}[bcount>1]
+
+#-------------------------------------------------------------------------------
+# Find satisfying events and group them into a single instance if there are 
+# more than 5 matches
+#-------------------------------------------------------------------------------
+S6 = {sipaddr='10.1.6.3', dipaddr='*'}[bcount>5]
+
+#-------------------------------------------------------------------------------
+# Find satisfying events and group them into a single instance if there are 
+# one or more matches
+#-------------------------------------------------------------------------------
+S7 = {sipaddr='10.1.11.2', dipaddr='*'}[bcount>=1]
+
+#-------------------------------------------------------------------------------
+# Find satisfying events and group them into instances containing less than < 10, 
+# but a non-zero number of events.
+# An attempt will be made to place one less than 10 i.e. 9 events into each instance
+# and the last bin will contain the remaining 
+# Ex. If there are 20 matches, number of instances returned will be 3 with
+#     each instance containing 9, 9, 2 
+#-------------------------------------------------------------------------------
+S8 = {sipaddr='10.1.6.3', dipaddr='*'}[bcount<10]
+
+#-------------------------------------------------------------------------------
+# Find satisfying events and group them into instances containing less than <= 10, 
+# but a non-zero number of events.
+# An attempt will be made to place 10 events into each instance
+# and the last bin will contain the remaining 
+# Ex. If there are 20 matches, number of instances returned will be 2 with
+#     each instance containing 10, 10 
+#-------------------------------------------------------------------------------
+S9 = {sipaddr='10.1.6.3', dipaddr='*'}[bcount<=10]
+
+#-------------------------------------------------------------------------------
+# Find satisfying events and group them into instances containing between 5 and 10
+# events.
+# Ex. Assuming there are 23 matches, there will be two instances 
+#     with each instance containing 10, 10. Remaining 3 will be ignored
+#     since they are < 5.
+#-------------------------------------------------------------------------------
+S10 = {sipaddr='10.1.6.3', dipaddr='*'}[bcount = 3:6]
+
+#-------------------------------------------------------------------------------
+# Find satisfying events and group them into instances containing 
+#-------------------------------------------------------------------------------
+#S11 = {sipaddr='10.1.6.3', dipaddr='*'}[bcount != 5]
+
+[behavior]
+# Current limitation. Using states directly in model definition below renders the 
+# QUALIFIER ineffective. Ticket #7.
+bS1 = S1
+bS2 = S2
+bS3 = S3
+bS4 = S4
+bS5 = S5
+bS6 = S6
+bS7 = S7
+bS8 = S8
+bS9 = S9
+bS10 = S10
+#
+
+[model]
+Model_S1(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS1 
+Model_S2(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS2
+Model_S3(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS3
+Model_S4(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS4
+Model_S5(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS5
+Model_S6(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS6
+Model_S7(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS7
+Model_S8(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS8
+Model_S9(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS9
+Model_S10(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = bS10

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Traditional analysis vs. Semantic analysis &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/files/comparison.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="traditional-analysis-vs-semantic-analysis">
+<h1>Traditional analysis vs. Semantic analysis<a class="headerlink" href="#traditional-analysis-vs-semantic-analysis" title="Permalink to this headline">¶</a></h1>
+<p>For the sake of brevity, assume traditional analysis being done using a popular analysis tool like <a class="reference external" href="http://www.wireshark.org/">wireshark</a>.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="36%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Traditional Analysis</th>
+<th class="head">Semantic Analysis Framework</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Input data</strong></td>
+<td>Network packets.</td>
+<td>Any type of data (with available plugin).</td>
+</tr>
+<tr class="row-odd"><td><strong>Data abstraction</strong></td>
+<td>Individual packets.</td>
+<td>Behaviors which are e</td>
+</tr>
+<tr class="row-even"><td><strong>Analysis constructs</strong></td>
+<td>Simple boolean queries facilitate low-level
+analysis of [[br]] data using attributes and exact values.</td>
+<td>Models capture abstract system behavior without any dependence
+on a specific data set.</td>
+</tr>
+<tr class="row-odd"><td><strong>Inferring relationships</strong></td>
+<td>Requires cumbersome multi-step analysis from users
+to infer relationships between data</td>
+<td>Models capture semantically-meaningful relationships using operators
+and constructs</td>
+</tr>
+<tr class="row-even"><td><strong>Expertise</strong></td>
+<td>Lots of expertise required.</td>
+<td>Models capture expertise and are readily available for reuse.</td>
+</tr>
+<tr class="row-odd"><td><strong>Sharing and reuse</strong></td>
+<td>Hard to share expertise in an abstract way.</td>
+<td>Models capture expertise and facilitate sharing and reuse.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The key differentiator of the semantic approach is the introduction of the
+notion of <em>behavior</em> - a sequence or a group of related facts -
+as a fundamental abstraction for analysis and reasoning over data.</p>
+<p>Behaviors can be composed using a rich set of operators to express
+semantically-relevant relationships. Behaviors capture system semantics
+and operators allow expressing sophisticated relationships between behaviors.
+This enables users to reason over data at higher levels and closer to their
+understanding of system operation.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Read the <a class="reference external" href="http://www.usenix.org/events/nsdi11/tech/full_papers/Viswanathan.pdf">NSDI&#8216;11 paper</a> (Section 2)
+for a more detailed comparison with other approaches.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

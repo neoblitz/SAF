@@ -1,0 +1,156 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 4 0 R
+ /F4 5 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F3': class PDFType1Font 
+4 0 obj
+% Font Courier-Bold
+<< /BaseFont /Courier-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+5 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Annot.NUMBER1': class PDFDictionary 
+6 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (mailto:aviswana@usc.edu) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 210.6572
+ 534.9824
+ 277.8797
+ 546.2324 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page1': class PDFPage 
+7 0 obj
+% Page dictionary
+<< /Annots [ 6 0 R ]
+ /Contents 13 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 12 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R8': class PDFCatalog 
+8 0 obj
+% Document Root
+<< /Outlines 10 0 R
+ /PageMode /UseNone
+ /Pages 12 0 R
+ /Type /Catalog >>
+endobj
+% 'R9': class PDFInfo 
+9 0 obj
+<< /Author ()
+ /CreationDate (D:20140915114420+08'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (pisa HTML to PDF <http://www.htmltopdf.org>)
+ /Subject ()
+ /Title () >>
+endobj
+% 'R10': class PDFOutlines 
+10 0 obj
+<< /Count 1
+ /First 11 0 R
+ /Last 11 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+11 0 obj
+<< /Dest [ 7 0 R
+ /Fit ]
+ /Parent 10 0 R
+ /Title (Copyright, License and Disclaimer) >>
+endobj
+% 'R12': class PDFPages 
+12 0 obj
+% page tree
+<< /Count 1
+ /Kids [ 7 0 R ]
+ /Type /Pages >>
+endobj
+% 'R13': class PDFStream 
+13 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 1280 >>
+stream
+Gb!;c969)P&AG%ls$8N?bZ<`.r8=iXocu52'`f)gA>^mn`>5,+/MXO>Q%-QS$'5q@ajcihGZjE7p\/g>g'pNSH/\T]aV"AAd$HpcfL'20E8UkT$rE"TTDbkKpdI@8S.KmK?.<k"a6WT9faJQK]#$Osdrp0+KkPOVB$B;Ka0sH2Ko"g2n%)75)kS`,.Dj^lb/S9%V!WgM'"<=h"hM5,:OK7Rd-(h]Q-@WXAlKqjP,48.>]<_k7c[oEr]jQ3DT1W(qYg$9`=X>ulZfPsicc5bU$&r"O$CJen+"8#-h+hN\K1NA&9pJcjDN`@Gb$)#fQFF]]7,GPLJHL<4/cJ.cgS4m\CYcoXS?8(0@>:t9G@n4OeNe$,T5](;`d#^N-?+\SW4Y:1uA8A9,R"j`sKYp6=/2qIp<XcQ;aK&;TJ>0D1<`qZfcoV5hK-pB,dhAJFqf0)YG19f8D<\@-=1T9D(:jdFskum+Frm(LnST$,1#Oi;+=IjW#hLZIDOE";"ngN6e=5S3"'N"qkJb:oZfIL5H^>X]]u&<UZH^PS[Nna&6sb4dgU!l`so+c(TG,99l_N$]eOh"XtB?3<Vqh1pUR?k?>4a5^0'cR\pQ4f1W+qJVE5`Y+[+$R6MihaYX[Y9<3MB<7-DoX5uo&2<_DPANZ[?Jo*r=>+$qaAGKQINkeeKTE<+qPt@B"TkTe_9;n;J]%"CN@W=Z))pjJkXLN*=/$!+_P5RkN'!n>]B\CW+Q]&3T:6R%K2]57)X>rUjW>'BU2g-?^.--Mr29Y('@e0<LBY!s"f;RRep+QfXW!\+t`FYKW-5'?]b(\uheB@sQQQK[&'rE98[AP%Q)Y=u]EXLF\Cr'dN%jlX_FhpHqQ.:U7X?"`KEiGHY9?T`Xku.dAFB=Gg#>Rder,c(\]egUZMCY"^\b4l`.;iSMW2d,=`7=7X-qlh,:/,Wd.8991:[XuL&#L3/N$kChnP/HV#X:aVCX4B4NeUC14smb6)6n:4J9C=QnYA*tG"350k&*;;?_Go-%/<CN,]Ra;eb&?W0Y<0sh_*f?0o5:-&s7DqKY$6QpSRDm]tJcK\pltif:-%&)P-)-4G_+?`[LLi1:/:Q[mCYBj?sXo?dAog<#X(0j3b5X8H21M5VmJniJ0q=mENb^o.tr:X6j<Pbc!*@#ch+Ybhdg,poV4P6drNAoN*i9G<CMGIi5eBkTai2RT/sARn3/;8[^#/eLZ4?-]1kPd!&f4W1^"Z$hSC8CMeK#k&tTk]iFp0//!`7j^)`goO\"_*BS@lp)hLU>+,~>endstream
+endobj
+xref
+0 14
+0000000000 65535 f
+0000000113 00000 n
+0000000245 00000 n
+0000000410 00000 n
+0000000585 00000 n
+0000000756 00000 n
+0000000929 00000 n
+0000001156 00000 n
+0000001455 00000 n
+0000001591 00000 n
+0000001825 00000 n
+0000001950 00000 n
+0000002086 00000 n
+0000002193 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\350\323\010\313\235\365| \320x"\375K\315\213\315) (\350\323\010\313\235\365| \320x"\375K\315\213\315)] 
+
+ /Info 9 0 R
+ /Root 8 0 R
+ /Size 14 >>
+startxref
+3589
+%%EOF

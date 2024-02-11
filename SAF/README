@@ -1,0 +1,42 @@
+######################################
+#                                    #
+#  Semantic Analysis Framework v0.2a #
+#                                    # 
+######################################
+Arun Viswanathan (aviswana@usc.edu)
+
+
+# 
+#
+# DO NOT Refer to http://thirdeye.deterlab.net for detailed 
+# installation and usage instructions.
+# 
+# Website does not exist anymore. All content from the website is under 
+# saf-documentation/wikipdfs/thirdeye.deterlab.net
+# 
+
+
+
+
+Simple framework usage
+======================
+    $ ./saf.py --db <sqlite db> --model <model file> 
+
+Plugins
+=======
+    Refer 'plugins/README' 
+    
+Running tests
+=============
+    $ python runtests.py -h
+      
+
+Developmental resources
+=======================
+    Details about profiling code, visualizing profiles, 
+    measuring code coverage, measuring LOC,
+    generating callgraphs can be found in 'utils/dev/README'.
+    
+    
+      
+      

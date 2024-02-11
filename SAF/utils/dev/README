@@ -1,0 +1,96 @@
+README for developer utilities
+##############################
+
+List of tools/modules
+======================
+
+    1. python-profile module - code profiling
+    2. RunSnakeRun - interactive visualization of profile output.  
+    3. gprof2dot - visualization of profile output as graph. (source included)
+    4. coverage - python code coverage. 
+    5. pycallgraph - function call graphs.
+
+--------------------------------------------------------------------------------    
+Installation 
+============
+
+   $ sudo apt-get install python-profile python-psutils python-wxgtk2.8 python-setuptools
+   $ sudo apt-get install graphviz
+   $ sudo easy_install SquareMap RunSnakeRun
+   $ sudo easy_install pycallgraph
+   $ easy_install coverage
+
+--------------------------------------------------------------------------------    
+Generating profile
+==================
+
+   $ ./saf.py --db <database> --model <model>  --profile    
+
+ * A profile file with the name p_<date_time>.prof is generated under logs/.
+
+-------------------------------------------------------------------------------- 
+Visualizing profile
+====================
+
+    Using gprof2dot (visualize as a graph)
+    --------------------------------------
+    $ ./gprof2dot.py -f pstats logs/<profile_file> | dot -Tpng -o logs/<profile_file>.png
+    
+    runsnake (interactive tree maps)
+    --------------------------------
+    $ runsnake logs/<profile_file>
+
+-------------------------------------------------------------------------------- 
+Code coverage
+=============
+  From the top directory
+    $ python runtests.py <desired test options> --coverage
+
+  Example
+    $ python runtests.py --a --data ../saf-data/db --diffs --coverage
+
+--------------------------------------------------------------------------------
+Measuring LOC
+=============
+    $ perl cloc-1.51.pl ../../*.py \ 
+                        ../../framework \ 
+                       ../../plugins 
+
+--------------------------------------------------------------------------------      
+Generating call graphs
+=======================
+
+$ pycallgraph --output-file=logs/callgraph.png  --include=* -- ./saf.py --db <dbfile> --model <model>
+
+--------------------------------------------------------------------------------      
+Interpreting output of gprof2dot
+================================
+A node in the output graph represents a function and has the following layout:
+
++------------------------------+
+|        function name         |
+| total time % ( self time % ) |
+|         total calls          |
++------------------------------+
+
+where:
+
+    total time % is the percentage of the running time spent in this function 
+            and all its children;
+    self time % is the percentage of the running time spent in this 
+            function alone;
+    total calls is the total number of times this function was called 
+            (including recursive calls). 
+
+An edge represents the calls between two functions and has the following layout:
+
+           total time %
+              calls
+parent --------------------> children
+
+Where:
+
+    total time % is the percentage of the running time transfered from the 
+        children to this parent (if available);
+    calls is the number of calls the parent function called the children. 
+    

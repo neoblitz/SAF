@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>common Package &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../index.html" />
+    <link rel="up" title="framework Package" href="framework.html" />
+    <link rel="next" title="dal Package" href="framework.dal.html" />
+    <link rel="prev" title="framework Package" href="framework.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="framework.dal.html" title="dal Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="framework.html" title="framework Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="modules.html" >Project Modules</a> &raquo;</li>
+          <li><a href="framework.html" accesskey="U">framework Package</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">common Package</a><ul>
+<li><a class="reference internal" href="#module-framework.common.dictionary"><code class="docutils literal"><span class="pre">dictionary</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.common.errordefs"><code class="docutils literal"><span class="pre">errordefs</span></code> Module</a></li>
+<li><a class="reference internal" href="#globalsym-module"><code class="docutils literal"><span class="pre">globalsym</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.common.log"><code class="docutils literal"><span class="pre">log</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.common.sorted_collection"><code class="docutils literal"><span class="pre">sorted_collection</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.common.sqlutils"><code class="docutils literal"><span class="pre">sqlutils</span></code> Module</a></li>
+<li><a class="reference internal" href="#storage-module"><code class="docutils literal"><span class="pre">storage</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.common.threadpool"><code class="docutils literal"><span class="pre">threadpool</span></code> Module</a></li>
+<li><a class="reference internal" href="#utils-module"><code class="docutils literal"><span class="pre">utils</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="framework.html"
+                        title="previous chapter">framework Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="framework.dal.html"
+                        title="next chapter">dal Package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/srcmodules/framework.common.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="common-package">
+<h1>common Package<a class="headerlink" href="#common-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-framework.common.dictionary">
+<span id="dictionary-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">dictionary</span></code> Module<a class="headerlink" href="#module-framework.common.dictionary" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="framework.common.dictionary.OrderedDict">
+<em class="property">class </em><code class="descname">OrderedDict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/dictionary.html#OrderedDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.dictionary.OrderedDict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/dictionary.html#OrderedDict.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.dictionary.OrderedDict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/dictionary.html#OrderedDict.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.dictionary.OrderedDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="framework.common.dictionary.OrderedDict.fromkeys">
+<em class="property">classmethod </em><code class="descname">fromkeys</code><span class="sig-paren">(</span><em>iterable</em>, <em>value=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/dictionary.html#OrderedDict.fromkeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.dictionary.OrderedDict.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.iteritems">
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.iterkeys">
+<code class="descname">iterkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.itervalues">
+<code class="descname">itervalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/dictionary.html#OrderedDict.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.dictionary.OrderedDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>key</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><em>last=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/dictionary.html#OrderedDict.popitem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.dictionary.OrderedDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>other=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.dictionary.OrderedDict.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#framework.common.dictionary.OrderedDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-framework.common.errordefs">
+<span id="errordefs-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">errordefs</span></code> Module<a class="headerlink" href="#module-framework.common.errordefs" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="framework.common.errordefs.AbortCondition">
+<em class="property">exception </em><code class="descname">AbortCondition</code><span class="sig-paren">(</span><em>msg=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/errordefs.html#AbortCondition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.errordefs.AbortCondition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suggests aborting whole program</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="framework.common.errordefs.ConstraintError">
+<em class="property">exception </em><code class="descname">ConstraintError</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/errordefs.html#ConstraintError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.errordefs.ConstraintError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when Processing Constraints</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="framework.common.errordefs.EventError">
+<em class="property">exception </em><code class="descname">EventError</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/errordefs.html#EventError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.errordefs.EventError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when Event Fetching or Processing fails</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="framework.common.errordefs.ModelProcessingError">
+<em class="property">exception </em><code class="descname">ModelProcessingError</code><span class="sig-paren">(</span><em>msg=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/errordefs.html#ModelProcessingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.errordefs.ModelProcessingError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when Processing behaviors</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="framework.common.errordefs.StateRecordError">
+<em class="property">exception </em><code class="descname">StateRecordError</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/errordefs.html#StateRecordError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.errordefs.StateRecordError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when State Record related processing fails</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="framework.common.errordefs.SymbolTableError">
+<em class="property">exception </em><code class="descname">SymbolTableError</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/errordefs.html#SymbolTableError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.errordefs.SymbolTableError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when Symbol Table related processing fails</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="framework.common.errordefs.SyntaxError">
+<em class="property">exception </em><code class="descname">SyntaxError</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/errordefs.html#SyntaxError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.errordefs.SyntaxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised for syntax errors</p>
+</dd></dl>
+
+</div>
+<div class="section" id="globalsym-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">globalsym</span></code> Module<a class="headerlink" href="#globalsym-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-framework.common.log">
+<span id="log-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">log</span></code> Module<a class="headerlink" href="#module-framework.common.log" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="framework.common.log.FilterLevels">
+<em class="property">class </em><code class="descname">FilterLevels</code><span class="sig-paren">(</span><em>levels_to_filter</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#FilterLevels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.FilterLevels" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="framework.common.log.FilterLevels.filter">
+<code class="descname">filter</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#FilterLevels.filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.FilterLevels.filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="framework.common.log.Log">
+<em class="property">class </em><code class="descname">Log</code><span class="sig-paren">(</span><em>name</em>, <em>levelname</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="framework.common.log.Log.LOGLEVELS">
+<code class="descname">LOGLEVELS</code><em class="property"> = {'info': 20, 'state': 15, 'warning': 30, 'critical': 50, 'behavior': 90, 'error': 40, 'debug': 10, 'fine': 5, 'sqlcmd': 91}</em><a class="headerlink" href="#framework.common.log.Log.LOGLEVELS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.behavior">
+<code class="descname">behavior</code><span class="sig-paren">(</span><em>numtabs</em>, <em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.behavior"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.behavior" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.critical">
+<code class="descname">critical</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.critical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.critical" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.debug">
+<code class="descname">debug</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.error">
+<code class="descname">error</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.fine">
+<code class="descname">fine</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.fine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.fine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.isEnabledFor">
+<code class="descname">isEnabledFor</code><span class="sig-paren">(</span><em>lvl</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.isEnabledFor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.isEnabledFor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.setlevel">
+<code class="descname">setlevel</code><span class="sig-paren">(</span><em>levelname</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.setlevel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.setlevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.sqlcmd">
+<code class="descname">sqlcmd</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.sqlcmd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.sqlcmd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.state">
+<code class="descname">state</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.log.Log.warning">
+<code class="descname">warning</code><span class="sig-paren">(</span><em>log</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/log.html#Log.warning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.log.Log.warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-framework.common.sorted_collection">
+<span id="sorted-collection-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">sorted_collection</span></code> Module<a class="headerlink" href="#module-framework.common.sorted_collection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="framework.common.sorted_collection.SortedCollection">
+<em class="property">class </em><code class="descname">SortedCollection</code><span class="sig-paren">(</span><em>iterable=()</em>, <em>key=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sequence sorted by a key function.</p>
+<p>SortedCollection() is much easier to work with than using bisect() directly.
+It supports key functions like those use in sorted(), min(), and max().
+The result of the key function call is saved so that keys can be searched
+efficiently.</p>
+<p>Instead of returning an insertion-point which can be hard to interpret, the
+five find-methods return a specific item in the sequence. They can scan for
+exact matches, the last item less-than-or-equal to a key, or the first item
+greater-than-or-equal to a key.</p>
+<p>Once found, an item&#8217;s ordinal position can be located with the index() method.
+New items can be added with the insert() and insert_right() methods.
+Old items can be deleted with the remove() method.</p>
+<p>The usual sequence methods are provided to support indexing, slicing,
+length lookup, clearing, copying, forward and reverse iteration, contains
+checking, item counts, item removal, and a nice looking repr.</p>
+<p>Finding and indexing are O(log n) operations while iteration and insertion
+are O(n).  The initial sort is O(n log n).</p>
+<p>The key function is stored in the &#8216;key&#8217; attibute for easy introspection or
+so that you can assign a new key function (triggering an automatic re-sort).</p>
+<p>In short, the class was designed to handle all of the common use cases for
+bisect but with a simpler API and support for key functions.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">SortedCollection</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="p">[</span>
+<span class="gp">... </span>        <span class="p">(</span><span class="s">&#39;roger&#39;</span><span class="p">,</span> <span class="s">&#39;young&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="p">(</span><span class="s">&#39;angela&#39;</span><span class="p">,</span> <span class="s">&#39;jones&#39;</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="p">(</span><span class="s">&#39;bill&#39;</span><span class="p">,</span> <span class="s">&#39;smith&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="p">(</span><span class="s">&#39;david&#39;</span><span class="p">,</span> <span class="s">&#39;thomas&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)]:</span>
+<span class="gp">... </span>    <span class="n">s</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>         <span class="c"># show records sorted by age</span>
+<span class="go">[(&#39;bill&#39;, &#39;smith&#39;, 22),</span>
+<span class="go"> (&#39;angela&#39;, &#39;jones&#39;, 28),</span>
+<span class="go"> (&#39;roger&#39;, &#39;young&#39;, 30),</span>
+<span class="go"> (&#39;david&#39;, &#39;thomas&#39;, 32)]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">find_le</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>           <span class="c"># find oldest person aged 29 or younger</span>
+<span class="go">(&#39;angela&#39;, &#39;jones&#39;, 28)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">find_lt</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span>           <span class="c"># find oldest person under 28</span>
+<span class="go">(&#39;bill&#39;, &#39;smith&#39;, 22)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">find_gt</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span>           <span class="c"># find youngest person over 28</span>
+<span class="go">(&#39;roger&#39;, &#39;young&#39;, 30)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">find_ge</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>       <span class="c"># find youngest person aged 32 or older</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>              <span class="c"># get the index of their record</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>                    <span class="c"># fetch the record at that index</span>
+<span class="go">(&#39;david&#39;, &#39;thomas&#39;, 32)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>   <span class="c"># now sort by first name</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="go">[(&#39;angela&#39;, &#39;jones&#39;, 28),</span>
+<span class="go"> (&#39;bill&#39;, &#39;smith&#39;, 22),</span>
+<span class="go"> (&#39;david&#39;, &#39;thomas&#39;, 32),</span>
+<span class="go"> (&#39;roger&#39;, &#39;young&#39;, 30)]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of item</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.extend">
+<code class="descname">extend</code><span class="sig-paren">(</span><em>itemlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.extend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a new item.  If equal keys are found, add to the left</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first item with a key == k.  Raise ValueError if not found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.find_ge">
+<code class="descname">find_ge</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.find_ge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.find_ge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first item with a key &gt;= equal to k.  Raise ValueError if not found</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.find_gt">
+<code class="descname">find_gt</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.find_gt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.find_gt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first item with a key &gt; k.  Raise ValueError if not found</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.find_le">
+<code class="descname">find_le</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.find_le"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.find_le" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return last item with a key &lt;= k.  Raise ValueError if not found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.find_lt">
+<code class="descname">find_lt</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.find_lt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.find_lt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return last item with a key &lt; k.  Raise ValueError if not found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.index">
+<code class="descname">index</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the position of an item.  Raise ValueError if not found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a new item.  If equal keys are found, add to the left</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.insert_right">
+<code class="descname">insert_right</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.insert_right"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.insert_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a new item.  If equal keys are found, add to the right</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="framework.common.sorted_collection.SortedCollection.key">
+<code class="descname">key</code><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>key function</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>index=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove first occurence of item.  Raise ValueError if not found</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.sorted_collection.SortedCollection.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sorted_collection.html#SortedCollection.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sorted_collection.SortedCollection.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove first occurence of item.  Raise ValueError if not found</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-framework.common.sqlutils">
+<span id="sqlutils-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">sqlutils</span></code> Module<a class="headerlink" href="#module-framework.common.sqlutils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="framework.common.sqlutils.attrhash_to_sql">
+<code class="descname">attrhash_to_sql</code><span class="sig-paren">(</span><em>kvhash</em>, <em>statename</em>, <em>globalsyms=None</em>, <em>fullobjname=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/sqlutils.html#attrhash_to_sql"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.sqlutils.attrhash_to_sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="storage-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">storage</span></code> Module<a class="headerlink" href="#storage-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-framework.common.threadpool">
+<span id="threadpool-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">threadpool</span></code> Module<a class="headerlink" href="#module-framework.common.threadpool" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="framework.common.threadpool.ThreadPool">
+<em class="property">class </em><code class="descname">ThreadPool</code><span class="sig-paren">(</span><em>num_threads</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/threadpool.html#ThreadPool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.threadpool.ThreadPool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pool of threads consuming tasks from a queue</p>
+<dl class="method">
+<dt id="framework.common.threadpool.ThreadPool.add_task">
+<code class="descname">add_task</code><span class="sig-paren">(</span><em>func</em>, <em>*args</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/threadpool.html#ThreadPool.add_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.threadpool.ThreadPool.add_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a task to the queue</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="framework.common.threadpool.ThreadPool.wait_completion">
+<code class="descname">wait_completion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/threadpool.html#ThreadPool.wait_completion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.threadpool.ThreadPool.wait_completion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for completion of all the tasks in the queue</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="framework.common.threadpool.Worker">
+<em class="property">class </em><code class="descname">Worker</code><span class="sig-paren">(</span><em>tasks</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/threadpool.html#Worker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.threadpool.Worker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thread executing tasks from a given tasks queue</p>
+<dl class="method">
+<dt id="framework.common.threadpool.Worker.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/common/threadpool.html#Worker.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.common.threadpool.Worker.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="utils-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">utils</span></code> Module<a class="headerlink" href="#utils-module" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="framework.dal.html" title="dal Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="framework.html" title="framework Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="modules.html" >Project Modules</a> &raquo;</li>
+          <li><a href="framework.html" >framework Package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

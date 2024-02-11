@@ -1,0 +1,48 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//nsdipaper_casestudy2_data.sqlite' ..
+Found 9138 events in database
+	PACKET_DNS - 9138 events [ Wed Jun  2 21:51:25 2010 (1275515485) to Wed Jun  2 21:51:28 2010 (1275515488) ] 
+Creating temporary directory for storing state /tmp/temp
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/dnskaminsky.2.b'..
+Processing model DNSKAMINSKY 
+    QUALIFIER matched 16 instances
+    QUALIFIER matched 16 instances
+    QUALIFIER matched 16 instances
+    State AtoV_query .. found 3 instances
+    State VtoR_query .. found 1 instances
+    State RtoV_resp .. found 1 instances
+    State AtoV_resp .. found 0 instances
+  Behavior b_1 .. found 0 instances
+    QUALIFIER matched 16 instances
+    State AtoV_query .. found 3 instances
+    State VtoR_query .. found 1 instances
+    State RtoV_resp .. found 1 instances
+    State AtoV_noresp .. found 1 instances
+  Behavior b_2 .. found 1 instances
+    QUALIFIER matched 16 instances
+    State AtoV_query .. found 3 instances
+    State VtoR_query .. found 1 instances
+    State AtoV_noresp .. found 1 instances
+    State RtoV_resp .. found 1 instances
+  Behavior b_3 .. found 0 instances
+  Behavior FAILURE .. found 1 instances
+    QUALIFIER matched 16 instances
+    QUALIFIER matched 16 instances
+    State AtoV_query .. found 3 instances
+    State VtoR_query .. found 1 instances
+    State AtoV_resp .. found 0 instances
+    State RtoV_resp .. found 0 instances
+  Behavior b_4 .. found 0 instances
+  Behavior SUCCESS .. found 0 instances
+  Behavior M .. found 1 instances
+Model DNSKAMINSKY satisfied by 1 instances
+================================
+Instances satisfying DNSKAMINSKY
+================================
+Total Matching Instances: 1
+( ( 2721 2722 ) ( 2723 2724 2725 2727 2729 2730 2731 2732 2733 2734 ) ( 2726 ) ) >> FAILURE.b_2
+--------------------------------

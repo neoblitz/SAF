@@ -1,0 +1,13 @@
+[header]
+NAMESPACE = TESTS
+NAME = FT_BCONSTRAINT_RATE_3
+IMPORT = NET.APP_PROTO.DNSREQRES
+
+[states]
+dnsreqs = DNSREQRES.dns_req()[bcount>1]
+
+[behavior]
+b  = (dnsreqs)[rate > 0]
+
+[model]
+FLOWRATE(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = b 

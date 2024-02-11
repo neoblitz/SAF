@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>processor Package &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../index.html" />
+    <link rel="up" title="framework Package" href="framework.html" />
+    <link rel="next" title="statemanager Package" href="framework.statemanager.html" />
+    <link rel="prev" title="presentation Package" href="framework.presentation.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="framework.statemanager.html" title="statemanager Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="framework.presentation.html" title="presentation Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="modules.html" >Project Modules</a> &raquo;</li>
+          <li><a href="framework.html" accesskey="U">framework Package</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">processor Package</a><ul>
+<li><a class="reference internal" href="#process-behaviorconstraints-module"><code class="docutils literal"><span class="pre">process_behaviorconstraints</span></code> Module</a></li>
+<li><a class="reference internal" href="#process-intervaltemporalops-module"><code class="docutils literal"><span class="pre">process_intervaltemporalops</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.processor.process_logicalops"><code class="docutils literal"><span class="pre">process_logicalops</span></code> Module</a></li>
+<li><a class="reference internal" href="#process-model-module"><code class="docutils literal"><span class="pre">process_model</span></code> Module</a></li>
+<li><a class="reference internal" href="#process-state-module"><code class="docutils literal"><span class="pre">process_state</span></code> Module</a></li>
+<li><a class="reference internal" href="#process-temporalops-module"><code class="docutils literal"><span class="pre">process_temporalops</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-framework.processor.resolver"><code class="docutils literal"><span class="pre">resolver</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="framework.presentation.html"
+                        title="previous chapter">presentation Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="framework.statemanager.html"
+                        title="next chapter">statemanager Package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/srcmodules/framework.processor.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="processor-package">
+<h1>processor Package<a class="headerlink" href="#processor-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="process-behaviorconstraints-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">process_behaviorconstraints</span></code> Module<a class="headerlink" href="#process-behaviorconstraints-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="process-intervaltemporalops-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">process_intervaltemporalops</span></code> Module<a class="headerlink" href="#process-intervaltemporalops-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-framework.processor.process_logicalops">
+<span id="process-logicalops-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">process_logicalops</span></code> Module<a class="headerlink" href="#module-framework.processor.process_logicalops" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="framework.processor.process_logicalops.LogicalOpsProcessor">
+<em class="property">class </em><code class="descname">LogicalOpsProcessor</code><span class="sig-paren">(</span><em>logger</em>, <em>datahandle</em>, <em>statehandle</em>, <em>stateproc</em>, <em>modelproc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/processor/process_logicalops.html#LogicalOpsProcessor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.processor.process_logicalops.LogicalOpsProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a behavior abstraction for the model processing algorithm.</p>
+<dl class="method">
+<dt id="framework.processor.process_logicalops.LogicalOpsProcessor.process_andop">
+<code class="descname">process_andop</code><span class="sig-paren">(</span><em>obj</em>, <em>prevobj</em>, <em>nextobj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/processor/process_logicalops.html#LogicalOpsProcessor.process_andop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.processor.process_logicalops.LogicalOpsProcessor.process_andop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.processor.process_logicalops.LogicalOpsProcessor.process_logicalop">
+<code class="descname">process_logicalop</code><span class="sig-paren">(</span><em>obj</em>, <em>prevobj</em>, <em>nextobj</em>, <em>in_binstances</em>, <em>treelevel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/processor/process_logicalops.html#LogicalOpsProcessor.process_logicalop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.processor.process_logicalops.LogicalOpsProcessor.process_logicalop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.processor.process_logicalops.LogicalOpsProcessor.process_notop">
+<code class="descname">process_notop</code><span class="sig-paren">(</span><em>obj</em>, <em>nextobj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/processor/process_logicalops.html#LogicalOpsProcessor.process_notop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.processor.process_logicalops.LogicalOpsProcessor.process_notop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.processor.process_logicalops.LogicalOpsProcessor.process_orop">
+<code class="descname">process_orop</code><span class="sig-paren">(</span><em>obj</em>, <em>prevobj</em>, <em>nextobj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/processor/process_logicalops.html#LogicalOpsProcessor.process_orop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.processor.process_logicalops.LogicalOpsProcessor.process_orop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="framework.processor.process_logicalops.LogicalOpsProcessor.process_xorop">
+<code class="descname">process_xorop</code><span class="sig-paren">(</span><em>obj</em>, <em>prevobj</em>, <em>nextobj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/processor/process_logicalops.html#LogicalOpsProcessor.process_xorop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.processor.process_logicalops.LogicalOpsProcessor.process_xorop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="process-model-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">process_model</span></code> Module<a class="headerlink" href="#process-model-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="process-state-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">process_state</span></code> Module<a class="headerlink" href="#process-state-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="process-temporalops-module">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">process_temporalops</span></code> Module<a class="headerlink" href="#process-temporalops-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-framework.processor.resolver">
+<span id="resolver-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">resolver</span></code> Module<a class="headerlink" href="#module-framework.processor.resolver" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="framework.processor.resolver.resolve_state">
+<code class="descname">resolve_state</code><span class="sig-paren">(</span><em>logger</em>, <em>binst</em>, <em>state_record</em>, <em>obj</em>, <em>symt</em>, <em>callerobj</em>, <em>mainns=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/framework/processor/resolver.html#resolve_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#framework.processor.resolver.resolve_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds a state expression to actual values</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="framework.statemanager.html" title="statemanager Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="framework.presentation.html" title="presentation Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="modules.html" >Project Modules</a> &raquo;</li>
+          <li><a href="framework.html" >framework Package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

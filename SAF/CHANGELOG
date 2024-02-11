@@ -1,0 +1,17 @@
+CHANGELOG for SAF (including plugins)
+=======================================
+
+
+===============================================================================
+SAF v0.2a - (5-July-2011)
+
+ - Major improvements to codebase. 
+ - Contains lots of functional bugfixes. 
+ - New plugin added for processing 'argus' records. 
+ - Improved output reporting.
+ - Improved documentation for knowledgebase files. Added a modeltemplate.
+ 
+===============================================================================
+SAF v0.1a - (12-June-2011)
+
+This release is the first alpha release of the framework. Expect it to be broken.

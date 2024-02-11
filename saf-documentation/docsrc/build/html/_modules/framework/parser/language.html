@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>framework.parser.language &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for framework.parser.language</h1><div class="highlight"><pre>
+<span class="c"># </span>
+<span class="c"># language.py - Language  definitions</span>
+<span class="c"># </span>
+<span class="c"># Copyright (C) 2011 University of Southern California.</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms are permitted</span>
+<span class="c"># provided that the above copyright notice and this paragraph are</span>
+<span class="c"># duplicated in all such forms and that any documentation, advertising</span>
+<span class="c"># materials, and other materials related to such distribution and use</span>
+<span class="c"># acknowledge that the software was developed by the University of</span>
+<span class="c"># Southern California, Information Sciences Institute.  The name of the</span>
+<span class="c"># University may not be used to endorse or promote products derived from</span>
+<span class="c"># this software without specific prior written permission.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND WITHOUT ANY EXPRESS OR IMPLIED</span>
+<span class="c"># WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF</span>
+<span class="c"># MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</span>
+<span class="c">#</span>
+<span class="c"># Author: Arun Viswanathan (aviswana@usc.edu)</span>
+<span class="c">#------------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="OperatorTokens"><a class="viewcode-back" href="../../../srcmodules/framework.parser.html#framework.parser.language.OperatorTokens">[docs]</a><span class="k">class</span> <span class="nc">OperatorTokens</span><span class="p">:</span>
+    <span class="n">LEADSTO</span> <span class="o">=</span> <span class="s">&quot;~&gt;&quot;</span>
+    <span class="n">SUMMOUTPUT</span> <span class="o">=</span> <span class="s">&quot;&gt;&gt;&quot;</span>
+    <span class="n">PARALLEL_SPEC</span> <span class="o">=</span> <span class="s">&quot;or&quot;</span>
+    <span class="n">AND</span> <span class="o">=</span> <span class="s">&quot;and&quot;</span>
+    <span class="n">OR</span> <span class="o">=</span> <span class="s">&quot;or&quot;</span>
+    <span class="n">XOR</span> <span class="o">=</span> <span class="s">&quot;xor&quot;</span>
+    <span class="n">NOT</span> <span class="o">=</span> <span class="s">&quot;not&quot;</span>
+    <span class="n">ALWAYS</span> <span class="o">=</span> <span class="s">&quot;[]&quot;</span>
+    <span class="n">OVERLAP</span> <span class="o">=</span> <span class="s">&quot;olap&quot;</span>
+    <span class="n">SW</span> <span class="o">=</span> <span class="s">&quot;sw&quot;</span>
+    <span class="n">EW</span> <span class="o">=</span> <span class="s">&quot;ew&quot;</span>
+    <span class="n">DUR</span> <span class="o">=</span> <span class="s">&quot;dur&quot;</span>
+    <span class="n">EQ</span> <span class="o">=</span>  <span class="s">&quot;eq&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="KeywordTokens"><a class="viewcode-back" href="../../../srcmodules/framework.parser.html#framework.parser.language.KeywordTokens">[docs]</a><span class="k">class</span> <span class="nc">KeywordTokens</span><span class="p">:</span>
+    <span class="n">KEYWORD_INIT</span> <span class="o">=</span> <span class="s">&quot;QUALIFIER&quot;</span>
+    <span class="n">KEYWORD_NAME</span> <span class="o">=</span> <span class="s">&quot;NAME&quot;</span>
+    <span class="n">KEYWORD_ROOT</span> <span class="o">=</span> <span class="s">&quot;ROOT&quot;</span>
+    <span class="n">KEYWORD_DEP</span> <span class="o">=</span> <span class="s">&quot;IMPORT&quot;</span>
+    <span class="n">KEYWORD_NAMESPACE</span> <span class="o">=</span> <span class="s">&quot;NAMESPACE&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="SectionTokens"><a class="viewcode-back" href="../../../srcmodules/framework.parser.html#framework.parser.language.SectionTokens">[docs]</a><span class="k">class</span> <span class="nc">SectionTokens</span><span class="p">:</span>
+    <span class="n">SECTION_HEADER</span> <span class="o">=</span> <span class="s">&quot;header&quot;</span>
+    <span class="n">SECTION_BEHAVIOR</span> <span class="o">=</span> <span class="s">&#39;behavior&#39;</span>
+    <span class="n">SECTION_STATES</span> <span class="o">=</span> <span class="s">&#39;states&#39;</span>
+    <span class="n">SECTION_MODEL</span> <span class="o">=</span> <span class="s">&#39;model&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="BconstraintTokens"><a class="viewcode-back" href="../../../srcmodules/framework.parser.html#framework.parser.language.BconstraintTokens">[docs]</a><span class="k">class</span> <span class="nc">BconstraintTokens</span><span class="p">:</span>
+    <span class="n">CONSTRAINTS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;at&quot;</span><span class="p">,</span> <span class="s">&quot;duration&quot;</span><span class="p">,</span> <span class="s">&quot;end&quot;</span><span class="p">,</span> 
+                   <span class="s">&quot;icount&quot;</span><span class="p">,</span> <span class="s">&quot;bcount&quot;</span><span class="p">,</span> <span class="s">&quot;rate&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;_limit&quot;</span><span class="p">,</span> <span class="s">&quot;_eventno&quot;</span><span class="p">]</span>
+   
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="OpconstraintTokens"><a class="viewcode-back" href="../../../srcmodules/framework.parser.html#framework.parser.language.OpconstraintTokens">[docs]</a><span class="k">class</span> <span class="nc">OpconstraintTokens</span><span class="p">:</span>
+    <span class="n">CONSTRAINTS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;&gt;=&#39;</span><span class="p">,</span><span class="s">&#39;&lt;=&#39;</span><span class="p">,</span><span class="s">&#39;&gt;&#39;</span><span class="p">,</span><span class="s">&#39;=&#39;</span><span class="p">,</span><span class="s">&#39;&lt;&#39;</span><span class="p">,</span><span class="s">&#39;!=&#39;</span><span class="p">]</span>
+   
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

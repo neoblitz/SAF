@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>framework.processor.process_logicalops &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for framework.processor.process_logicalops</h1><div class="highlight"><pre>
+<span class="c"># process_logicalops.py - Functions for processing logical operators</span>
+<span class="c">#</span>
+<span class="c"># Copyright (C) 2011 University of Southern California.</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms are permitted</span>
+<span class="c"># provided that the above copyright notice and this paragraph are</span>
+<span class="c"># duplicated in all such forms and that any documentation, advertising</span>
+<span class="c"># materials, and other materials related to such distribution and use</span>
+<span class="c"># acknowledge that the software was developed by the University of</span>
+<span class="c"># Southern California, Information Sciences Institute.  The name of the</span>
+<span class="c"># University may not be used to endorse or promote products derived from</span>
+<span class="c"># this software without specific prior written permission.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND WITHOUT ANY EXPRESS OR IMPLIED</span>
+<span class="c"># WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF</span>
+<span class="c"># MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</span>
+<span class="c">#</span>
+<span class="c"># Author: Arun Viswanathan (aviswana@usc.edu)</span>
+<span class="c">#------------------------------------------------------------------------------</span>
+
+<span class="kn">import</span> <span class="nn">framework.common.sqlutils</span> <span class="kn">as</span> <span class="nn">sqlutils</span>
+<span class="kn">from</span> <span class="nn">framework.objects.behaviorinstancelist</span> <span class="kn">import</span> <span class="n">BehaviorInstanceList</span>
+
+<div class="viewcode-block" id="LogicalOpsProcessor"><a class="viewcode-back" href="../../../srcmodules/framework.processor.html#framework.processor.process_logicalops.LogicalOpsProcessor">[docs]</a><span class="k">class</span> <span class="nc">LogicalOpsProcessor</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Provides a behavior abstraction for the model processing algorithm.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+       
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">datahandle</span><span class="p">,</span> <span class="n">statehandle</span><span class="p">,</span> <span class="n">stateproc</span><span class="p">,</span> <span class="n">modelproc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sh</span>      <span class="o">=</span> <span class="n">statehandle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dh</span>      <span class="o">=</span> <span class="n">datahandle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span>  <span class="o">=</span> <span class="n">logger</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state_proc</span> <span class="o">=</span> <span class="n">stateproc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_proc</span>  <span class="o">=</span> <span class="n">modelproc</span>
+    
+    
+<div class="viewcode-block" id="LogicalOpsProcessor.process_orop"><a class="viewcode-back" href="../../../srcmodules/framework.processor.html#framework.processor.process_logicalops.LogicalOpsProcessor.process_orop">[docs]</a>    <span class="k">def</span> <span class="nf">process_orop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">prevobj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">):</span>
+                        
+        <span class="c"># Semantics of OR </span>
+        <span class="c">#     Returns an empty list only if both the </span>
+        <span class="c">#     behavior instance lists are empty otherwise</span>
+        <span class="c">#     just return whichever is non-empty </span>
+        <span class="n">lhs_instances</span> <span class="o">=</span> <span class="n">prevobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span>
+        <span class="n">rhs_instances</span> <span class="o">=</span> <span class="n">nextobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lhs_instances</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">rhs_instances</span><span class="p">)):</span>      
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">lhs_instances</span><span class="p">)</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">rhs_instances</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">BehaviorInstanceList</span><span class="p">())</span>
+       
+    </div>
+<div class="viewcode-block" id="LogicalOpsProcessor.process_andop"><a class="viewcode-back" href="../../../srcmodules/framework.processor.html#framework.processor.process_logicalops.LogicalOpsProcessor.process_andop">[docs]</a>    <span class="k">def</span> <span class="nf">process_andop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">prevobj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">):</span>
+                
+        <span class="c"># Semantics of AND </span>
+        <span class="c">#    Returns instances of both lists if non-empty </span>
+        <span class="c">#    and returns a empty list otherwise</span>
+        <span class="n">lhs_instances</span> <span class="o">=</span> <span class="n">prevobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span>
+        <span class="n">rhs_instances</span> <span class="o">=</span> <span class="n">nextobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lhs_instances</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">rhs_instances</span><span class="p">)):</span>      
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">lhs_instances</span><span class="p">)</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">rhs_instances</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">BehaviorInstanceList</span><span class="p">())</span>
+    
+</div>
+<div class="viewcode-block" id="LogicalOpsProcessor.process_xorop"><a class="viewcode-back" href="../../../srcmodules/framework.processor.html#framework.processor.process_logicalops.LogicalOpsProcessor.process_xorop">[docs]</a>    <span class="k">def</span> <span class="nf">process_xorop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">prevobj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">):</span>
+        
+        <span class="c"># Semantics of XOR </span>
+        <span class="c">#     Returns an empty list when both the </span>
+        <span class="c">#     behavior instance lists are simultaneously empty </span>
+        <span class="c">#     or both are simultaneously non-empty </span>
+        <span class="n">lhs_instances</span> <span class="o">=</span> <span class="n">prevobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span>
+        <span class="n">rhs_instances</span> <span class="o">=</span> <span class="n">nextobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span>
+        
+        <span class="c"># a xor b = (a and !b) or (b and !a)</span>
+        <span class="n">len_lhs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lhs_instances</span><span class="p">)</span>
+        <span class="n">len_rhs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rhs_instances</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">len_lhs</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">len_rhs</span><span class="p">)</span> <span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">lhs_instances</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">len_rhs</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">len_lhs</span><span class="p">):</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">rhs_instances</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>      
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">BehaviorInstanceList</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="LogicalOpsProcessor.process_notop"><a class="viewcode-back" href="../../../srcmodules/framework.processor.html#framework.processor.process_logicalops.LogicalOpsProcessor.process_notop">[docs]</a>    <span class="k">def</span> <span class="nf">process_notop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">):</span>
+                
+        <span class="c"># Semantics of NOT </span>
+        <span class="c">#    Returns an empty list if the</span>
+        <span class="c">#    specified behavior instance list is non empty</span>
+        <span class="c">#    Else returns a special instance list </span>
+        <span class="n">rhs_instances</span> <span class="o">=</span> <span class="n">nextobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span>
+               
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rhs_instances</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">BehaviorInstanceList</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">BehaviorInstanceList</span><span class="p">(</span><span class="n">special</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+        
+        
+    </div>
+<div class="viewcode-block" id="LogicalOpsProcessor.process_logicalop"><a class="viewcode-back" href="../../../srcmodules/framework.processor.html#framework.processor.process_logicalops.LogicalOpsProcessor.process_logicalop">[docs]</a>    <span class="k">def</span> <span class="nf">process_logicalop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">prevobj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">,</span> <span class="n">in_binstances</span><span class="p">,</span> <span class="n">treelevel</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">behavior</span><span class="p">(</span><span class="n">treelevel</span><span class="p">,</span> <span class="s">&quot;--&gt; </span><span class="si">%s</span><span class="s"> (IN: </span><span class="si">%s</span><span class="s"> Type: </span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> \
+                                      <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span>
+                                       <span class="nb">len</span><span class="p">(</span><span class="n">in_binstances</span><span class="p">),</span>
+                                       <span class="nb">type</span><span class="p">(</span><span class="n">in_binstances</span><span class="p">))</span>
+                                     <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">fine</span><span class="p">(</span><span class="s">&quot;Record IDs  : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">in_binstances</span><span class="p">))</span>
+       
+        <span class="bp">self</span><span class="o">.</span><span class="n">sh</span><span class="o">.</span><span class="n">flush_cache</span><span class="p">()</span>
+        <span class="n">binstances</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">nextobj</span><span class="o">.</span><span class="n">is_behavior_object</span><span class="p">()):</span>
+            <span class="n">objlist</span> <span class="o">=</span> <span class="n">nextobj</span><span class="o">.</span><span class="n">get_contents</span><span class="p">()</span><span class="o">.</span><span class="n">get_objects</span><span class="p">()</span>
+            <span class="n">binstances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_proc</span><span class="o">.</span><span class="n">process_behavior</span><span class="p">(</span><span class="n">nextobj</span><span class="o">.</span><span class="n">get_contents</span><span class="p">(),</span>
+                                      <span class="n">in_binstances</span><span class="p">,</span>
+                                      <span class="n">treelevel</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                                      <span class="n">objlist</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                                      <span class="n">callerobj</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span> 
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">fine</span><span class="p">(</span><span class="s">&quot;Returned list from behavior processing : </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> \
+                             <span class="p">(</span><span class="n">binstances</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># Process the next object</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">nextobj</span><span class="o">.</span><span class="n">is_state_node</span><span class="p">()):</span>
+                <span class="n">fullobjname</span> <span class="o">=</span> <span class="n">nextobj</span><span class="o">.</span><span class="n">get_fullname</span><span class="p">()</span>    
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dh</span><span class="o">.</span><span class="n">globalsyms</span><span class="o">.</span><span class="n">is_state_dependent</span><span class="p">(</span><span class="n">fullobjname</span><span class="p">):</span>
+                    <span class="n">binstances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_proc</span><span class="o">.</span><span class="n">process_state</span><span class="p">(</span><span class="n">nextobj</span><span class="p">,</span>
+                                                    <span class="n">prevobj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">(),</span>
+                                                    <span class="n">treelevel</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                                                    <span class="n">callerobj</span><span class="o">=</span><span class="n">obj</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">binstances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_proc</span><span class="o">.</span><span class="n">process_state</span><span class="p">(</span><span class="n">nextobj</span><span class="p">,</span>
+                                                    <span class="n">in_binstances</span><span class="p">,</span>
+                                                    <span class="n">treelevel</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                                                    <span class="n">callerobj</span><span class="o">=</span><span class="n">obj</span><span class="p">)</span>
+                    
+                <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span> 
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">fine</span><span class="p">(</span><span class="s">&quot;Returned IDs : </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binstances</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;UNEXPECTED object </span><span class="si">%s</span><span class="s"> of type </span><span class="si">%s</span><span class="s"> after </span><span class="se">\</span>
+<span class="s">                 </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nextobj</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span> <span class="n">nextobj</span><span class="o">.</span><span class="n">get_type</span><span class="p">(),</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_name</span><span class="p">()))</span>
+
+        <span class="n">nextobj</span><span class="o">.</span><span class="n">add_instances</span><span class="p">(</span><span class="n">binstances</span><span class="p">)</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">is_or_op</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_orop</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">prevobj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">is_xor_op</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_xorop</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">prevobj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">is_and_op</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_andop</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">prevobj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">is_not_op</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_notop</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">nextobj</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="s">&quot;Unrecognized logical operator - </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span>\
+                               <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_name</span><span class="p">()))</span>
+        
+        <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">behavior</span><span class="p">(</span><span class="n">treelevel</span><span class="p">,</span> <span class="s">&quot;&lt;-- </span><span class="si">%s</span><span class="s"> (OUT: </span><span class="si">%s</span><span class="s">  Type: </span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> \
+                                    <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span>
+                                     <span class="nb">len</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()),</span>
+                                     <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">())))</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_instances</span><span class="p">()</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

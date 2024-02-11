@@ -1,0 +1,44 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//dnsflows_100rec.sqlite' ..
+Found 100 events in database
+	PACKET_DNS - 100 events [ Wed Jun  2 21:51:23 2010 (1275515483) to Wed Jun  2 21:51:23 2010 (1275515483) ] 
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/ft_bconstraint_rate.2'..
+Processing model FLOWRATE 
+    QUALIFIER matched 100 instances
+    State dns_req .. found 9 instances
+    State dns_res .. found 8 instances
+  Behavior b .. found 8 instances
+  Behavior DNS_REQ_RES .. found 1 instances
+    Checking constraint 'rate' for 1 instances
+      Found instance with rate = 268.555507066 (8 instances / 0.029789 sec) (> 100)
+  Behavior b .. found 1 instances
+Model FLOWRATE satisfied by 1 instances
+=============================
+Instances satisfying FLOWRATE
+=============================
+Total Matching Instances: 1
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+     eventno      |    eventtype     |    timestamp     |  timestampusec   |     sipaddr      |     dipaddr      |     protocol     |      sport       
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                           Behavior: DNS_REQ_RES.b(2 events)                                                            
+        1         |    PACKET_DNS    |    1275515483    |      660919      |    10.1.11.2     |     10.1.4.2     |        17        |      10486       
+        8         |    PACKET_DNS    |    1275515483    |      663224      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+        13        |    PACKET_DNS    |    1275515483    |      664874      |    10.1.11.2     |     10.1.4.2     |        17        |      60435       
+        20        |    PACKET_DNS    |    1275515483    |      667220      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+        25        |    PACKET_DNS    |    1275515483    |      668807      |    10.1.11.2     |     10.1.4.2     |        17        |      20205       
+        32        |    PACKET_DNS    |    1275515483    |      670969      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+        37        |    PACKET_DNS    |    1275515483    |      672728      |    10.1.11.2     |     10.1.4.2     |        17        |      47955       
+        44        |    PACKET_DNS    |    1275515483    |      674967      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+        49        |    PACKET_DNS    |    1275515483    |      676659      |    10.1.11.2     |     10.1.4.2     |        17        |      34950       
+        56        |    PACKET_DNS    |    1275515483    |      678965      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+        61        |    PACKET_DNS    |    1275515483    |      680579      |    10.1.11.2     |     10.1.4.2     |        17        |      59662       
+        69        |    PACKET_DNS    |    1275515483    |      682962      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+        73        |    PACKET_DNS    |    1275515483    |      684487      |    10.1.11.2     |     10.1.4.2     |        17        |      62147       
+        80        |    PACKET_DNS    |    1275515483    |      686710      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+        85        |    PACKET_DNS    |    1275515483    |      688397      |    10.1.11.2     |     10.1.4.2     |        17        |      38762       
+        92        |    PACKET_DNS    |    1275515483    |      690708      |     10.1.4.2     |    10.1.11.2     |        17        |        53        
+--------------------------------------------------------------------------------------------------------------------------------------------------------

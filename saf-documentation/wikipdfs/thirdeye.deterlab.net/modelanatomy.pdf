@@ -1,0 +1,242 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 5 0 R
+ /F4 6 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+4 0 obj
+% Page dictionary
+<< /Contents 18 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 17 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F3': class PDFType1Font 
+5 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+6 0 obj
+% Font Helvetica-Oblique
+<< /BaseFont /Helvetica-Oblique
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page2': class PDFPage 
+7 0 obj
+% Page dictionary
+<< /Contents 19 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 17 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page3': class PDFPage 
+8 0 obj
+% Page dictionary
+<< /Contents 20 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 17 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R9': class PDFCatalog 
+9 0 obj
+% Document Root
+<< /Outlines 11 0 R
+ /PageMode /UseNone
+ /Pages 17 0 R
+ /Type /Catalog >>
+endobj
+% 'R10': class PDFInfo 
+10 0 obj
+<< /Author ()
+ /CreationDate (D:20140915114451+08'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (pisa HTML to PDF <http://www.htmltopdf.org>)
+ /Subject ()
+ /Title () >>
+endobj
+% 'R11': class PDFOutlines 
+11 0 obj
+<< /Count 2
+ /First 12 0 R
+ /Last 12 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+12 0 obj
+<< /Count -4
+ /Dest [ 4 0 R
+ /Fit ]
+ /First 13 0 R
+ /Last 16 0 R
+ /Parent 11 0 R
+ /Title (Anatomy of a model script) >>
+endobj
+% 'Outline.2.0': class OutlineEntryObject 
+13 0 obj
+<< /Dest [ 7 0 R
+ /Fit ]
+ /Next 14 0 R
+ /Parent 12 0 R
+ /Title (Header Section) >>
+endobj
+% 'Outline.2.1': class OutlineEntryObject 
+14 0 obj
+<< /Dest [ 7 0 R
+ /Fit ]
+ /Next 15 0 R
+ /Parent 12 0 R
+ /Prev 13 0 R
+ /Title (State Section) >>
+endobj
+% 'Outline.2.2': class OutlineEntryObject 
+15 0 obj
+<< /Dest [ 7 0 R
+ /Fit ]
+ /Next 16 0 R
+ /Parent 12 0 R
+ /Prev 14 0 R
+ /Title (Behavior Section) >>
+endobj
+% 'Outline.2.3': class OutlineEntryObject 
+16 0 obj
+<< /Dest [ 8 0 R
+ /Fit ]
+ /Parent 12 0 R
+ /Prev 15 0 R
+ /Title (Model Section) >>
+endobj
+% 'R17': class PDFPages 
+17 0 obj
+% page tree
+<< /Count 3
+ /Kids [ 4 0 R
+ 7 0 R
+ 8 0 R ]
+ /Type /Pages >>
+endobj
+% 'R18': class PDFStream 
+18 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 556 >>
+stream
+GauI2_2ctu&;KY=q@7QLU^iua3-L<5!c\3Sd9>NL>'DpP`,$?CG^JFldnT)T2Mr9hMCcgAs*`1[5d_,FmpufEjl#fY!b-+aTEGpI+5rc[cgJD7&(;1]9j*p9<=1`"Bbqjb+BVH)L.2KSL0sOT]05Np%GFd6.mYqEL>#<)D?WG\:2XPdLd<%Q<;4nOnD[+2]st5'Wdt>TlVPH@f]4nL^V$Va-JTAcq\%[CE3EYh\8SbLgpR#FkK&H8j>;%W(pR[P,'8YRm<K4D4i."+A>9<lKThV@R1[X9#alA>MipV*)RZC_Q/ag.jtGLK<SiE"2hX'L:kk7m^iiis5FPp=_K.W:0enjj(MK.bh=ug(2H5[>RdEYu<*Q_mm_J[94/hSUW:%+`i3#2J-G$ZH=SFd@pI,b[+0&gX0dDa+%k\W#;P'8I[KS7pC)iK&@._Q["X7VT#KNW+1`_L(nG15YE9!9Z&ZX#jcf_=WWC()8+j=es9_?#4o#?a>4e):A[_!!Gl!F1tr+?U2ro!Cic_RWhl@/#9mO6]9OX!!MXQQ_go@Y4O?Df7~>endstream
+endobj
+% 'R19': class PDFStream 
+19 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 2116 >>
+stream
+Gb!ku>Ar7S'RgRSs)9"d1^t'mV!\=?^tmEjlci-\m%GF$fqKLi\j_eB#"/.>G=Z"U23)Oq:1&_YQ;-oiIcnkk,75@g;=ur0!+(!@_^c(YJN!UE&-KR(E:+_fgo>j-/N4M$WGB'&BGt<^Xs7q%!JOHUNtGUF.5PC]G_#-pZ_L57b60I"h:7<UEDI%V!%9/'(q5bqCgp!^Rek4)E:g('/;BRK$TNi3Q:*E#69bR5O)O#'9W!F)0>RH(]ONp<o9E4$;#e!t?QMbV>f&&fAJ^2jabZh[F;p'=K==R_!q.@qD:9i?X]mkQ?4ZTC4qY&UVr0q,"?_?W''FrsAd-LhSr$p%/g"^M/Kh!+MAm%NiQJ'H*5IBfpidq(EgS+T3I.5549GGGB$$G'3KEq>L`G#=#)XuC8?JjC9kioOdFaZJA^D2qC.72P%`nj-Rq7]QE?T;ja0*dg7G%g.Y/\'Ve!7-VXH-*rd8I4^g1kbp3nR=V^MuKr=]]l+IA<e8-84,S]N<7^43D>!m`(@ES%ST(jaC9eDc`'<MjWDF`5Z+PIOeoU(NCO$A"$2a\33NhP9^R#\P/fA3W_P+^qZ\=04H!<S7JE<AL\Hm)Y,AMFj4*EDRAIJ[`Md,_RIj-H?]uO@Zt:"TN_gA*n,pZEr:GJ'#CRDgla2*>iKG*NGo.*WmuKRA*C@!j<b?N$O9sXTSA1I:bNStIKdTnqJrh4$A>/fWuh_e/OA;\kk*o.>:#+)\n%n\^eb\-=_M[Z6?eE\/6l,)0G0#i;\]d@+O'hbYac&Rg!:ls>EfEi];7eD#[/m%k#;W_4-WSC0[LB3]t0KkR"c*L].24mUrmbi9_Z_5mc09V3rW%Q8g^X7GD!Bf=2Vl#kA'2db/[ZNf=Q*b]Gt1I?OngIHgf^rCWJ,__q3aaE,iF]q!c>^c,H`Ao?0"%s6r)k(WCgFc^lAcfB;#`naipnO(R5!&%2#LZERYu>bp!9kMeN5emZZhl3BV`B#uiTdeXu#VI46JXQ>@NS:kP$oWJe`"o42J)DT>`A=]tYfN!9jlsQ7Mr`H+F+\+](Mi4u*XhM7rq:]MA8ltoK^ZFLR<D+j7:f,]&l>F#:h8Slp$GB5*.[o@mD<N=bg;AW#36"OS4u,7<\u7dBEe85bBXO1VHEfpUUMmQND*`k'TB.h<D1RLcTP<$h18db^FWG3tWRERA]1S\hcKT0,]a_-e'!Ys.V`QeFR_)eUA90&$VYRf^Q.PC)/(e*,Xq<>b;\;fg/Fq>m5>#NV3Ml0-ZM1#<&j.g#kBDA%r)(Nshp-?PM`Pp/d^"YV2J5hk<-YpbgS9)U?A-j_9.8VnpCTc5a"opg6)&5-3D/$/UqP9faC,jBgDL5.Ws,bhEL6N3Y"U%;F1d/sEY2^WMTNQCX/IO>N^NnDGq<T=>6Pn#$mm1ZP)\IOPdRNOnG8;Y7FO)Vj@'+V;Iq`+Y&,F)WucVK^AWkq(Y)+_B[lD5Liht+mf48J:&+K+>HMC"K[PlT,>T("-V]@l=f2\B-IuoZ.#lX-()kqCSloK[FtL0d1hPKJggoU;PO[12?*]FSb\"S*OlHm8j*<8@Tk^Og.3FJ)i+9c)LLo"N*W%QpX_tm_1lh!D!^j:L'>-YInh7^n%\,e*beb6^V(<TF&K#LPY.,qk<PKA08E0-Ql0q`cO8)\mW_5Gj`D+=RX&h!uGj9[(nTO^,dd)e6UclD6qsZ.f2=X\E:heu9k-Cm+-(2+ka,$8IBS"T3JiZ2t[j]ZH50(c-jM@(uaNo.n0fR3*PV%51'.]6FKIYT7B3?RFEgcC.WWp5GULc&BIQoqC7D&K*D@o<q-BSKU>cm*[D.554I7%jIooeV;p+2Q/CD(AaoSLbflD;[%\^\9_=S<33XEn0Ig4N[j8Ss+Dmf(-Z*f>$\-[:5ET%=tLD80(g/!$D)90j0PZ3CmKn`Ks((%gQi)PFangS?.OFV37]M:3)^+5SO&3Y"$uVi*]`Dr&D$lbJr`1hX_FACFtbFZSiWU10<J2[bs7\iSr9BS<@gNXK)i(5@`+P-_fM@9F=)-W"cMq>Bg_JB<jbGPIpSD2u:T`DX4-4Re$9_^o&`Tub?:V_`hF]1/&14't[js#3f/"dIIO\8,'[iPC#t=dJg~>endstream
+endobj
+% 'R20': class PDFStream 
+20 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 455 >>
+stream
+GatUo?VA9j'ZJr;r=8!fKuMpHC"cWS"]<Van9J6E/_W,:<qc2\]1k2]16I6/PMY*l4/XYR$%mtT<WO!@k>qfG0QW=d''9sr-B?r;8XjhDRA)ggOX1=o\Id`j?34P'gG>]?6!Rh58"i%nG18'9'hedn-VRJ&RD9LZ@Ndb=m6NR-4\7DfAq?-npYtT[=*GKihY7HP^77#6G.+K#knhXRV_HFNB,L$fm8Z7Wo5,j7:rIFpdm!Pf,-EmuKV2fhM,3",>MnrLJ?5#FUuh'dJP8X`J/m':T$]etJn6^d)cYZY'Dr7*SM+f97m$%,YIER_>,qg>C!PhTXPGU0*h#*tF5*AZk`uuace?7d_sXApX3qak4.W_oF5NXph8GR1K3>c$m910(Xt2<8G^h:lSLrJ:Ep(^G751'ep&qSqjX-#=`8g/CWe[O)U@9Oe[/X6\^Y>cEUCT._`pN~>endstream
+endobj
+xref
+0 21
+0000000000 65535 f
+0000000113 00000 n
+0000000245 00000 n
+0000000410 00000 n
+0000000583 00000 n
+0000000864 00000 n
+0000001025 00000 n
+0000001204 00000 n
+0000001483 00000 n
+0000001762 00000 n
+0000001899 00000 n
+0000002134 00000 n
+0000002259 00000 n
+0000002448 00000 n
+0000002598 00000 n
+0000002762 00000 n
+0000002929 00000 n
+0000003060 00000 n
+0000003183 00000 n
+0000003881 00000 n
+0000006140 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\2713"MG\225\230}E\011[\267y\371\001\233) (\2713"MG\225\230}E\011[\267y\371\001\233)] 
+
+ /Info 10 0 R
+ /Root 9 0 R
+ /Size 21 >>
+startxref
+6710
+%%EOF

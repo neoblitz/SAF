@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>framework.objects.behaviorinstancelist &mdash; Semantic Analysis Framework 0.2a documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Semantic Analysis Framework 0.2a documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/ThirdEyeLogo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for framework.objects.behaviorinstancelist</h1><div class="highlight"><pre>
+<span class="c"># behaviorinstancelist.py</span>
+<span class="c">#</span>
+<span class="c"># Copyright (C) 2011 University of Southern California.</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms are permitted</span>
+<span class="c"># provided that the above copyright notice and this paragraph are</span>
+<span class="c"># duplicated in all such forms and that any documentation, advertising</span>
+<span class="c"># materials, and other materials related to such distribution and use</span>
+<span class="c"># acknowledge that the software was developed by the University of</span>
+<span class="c"># Southern California, Information Sciences Institute.  The name of the</span>
+<span class="c"># University may not be used to endorse or promote products derived from</span>
+<span class="c"># this software without specific prior written permission.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND WITHOUT ANY EXPRESS OR IMPLIED</span>
+<span class="c"># WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF</span>
+<span class="c"># MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</span>
+<span class="c">#</span>
+<span class="c"># Author: Arun Viswanathan (aviswana@usc.edu)</span>
+<span class="c">#------------------------------------------------------------------------------</span>
+
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+<span class="c"># Local Imports</span>
+<span class="kn">from</span> <span class="nn">framework.common.sorted_collection</span> <span class="kn">import</span> <span class="n">SortedCollection</span>
+
+<div class="viewcode-block" id="BehaviorInstanceList"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.behaviorinstancelist.BehaviorInstanceList">[docs]</a><span class="k">class</span> <span class="nc">BehaviorInstanceList</span><span class="p">(</span><span class="n">SortedCollection</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        BehaviorInstanceList is a sorted list of BehaviorInstance objects</span>
+<span class="sd">        sorted in ascending order first by startime and then by endtime.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span><span class="o">=</span><span class="p">(),</span> <span class="n">bobject</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">special</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BehaviorInstanceList</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> 
+                                                  <span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_timestamp</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">icount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len__</span><span class="p">()</span>
+        <span class="c"># A pointer to the behavior of which the list objects are instances </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ptr_to_behavior</span> <span class="o">=</span> <span class="n">bobject</span>
+        
+        <span class="c"># Setting special to True means that this list</span>
+        <span class="c"># just acts as a signal that some condition has been met.</span>
+        <span class="c"># Special list wont have any contents. Its a NULL list with </span>
+        <span class="c"># the special flag set. This is primarily used for indicating the </span>
+        <span class="c"># success of the &#39;negation&#39; logical operation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">special</span> <span class="o">=</span> <span class="n">special</span> 
+    
+<div class="viewcode-block" id="BehaviorInstanceList.set_behavior"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.behaviorinstancelist.BehaviorInstanceList.set_behavior">[docs]</a>    <span class="k">def</span> <span class="nf">set_behavior</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ptr_to_behavior</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ptr_to_behavior</span> <span class="o">=</span> <span class="n">ptr_to_behavior</span>
+    </div>
+<div class="viewcode-block" id="BehaviorInstanceList.get_behavior"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.behaviorinstancelist.BehaviorInstanceList.get_behavior">[docs]</a>    <span class="k">def</span> <span class="nf">get_behavior</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ptr_to_behavior</span>
+    </div>
+<div class="viewcode-block" id="BehaviorInstanceList.get_icount"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.behaviorinstancelist.BehaviorInstanceList.get_icount">[docs]</a>    <span class="k">def</span> <span class="nf">get_icount</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len__</span><span class="p">()</span>
+    </div>
+<div class="viewcode-block" id="BehaviorInstanceList.copy"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.behaviorinstancelist.BehaviorInstanceList.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    </div>
+<div class="viewcode-block" id="BehaviorInstanceList.get_ids"><a class="viewcode-back" href="../../../srcmodules/framework.objects.html#framework.objects.behaviorinstancelist.BehaviorInstanceList.get_ids">[docs]</a>    <span class="k">def</span> <span class="nf">get_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">idlist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">binst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">:</span>
+            <span class="n">idlist</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">binst</span><span class="o">.</span><span class="n">get_ids</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">idlist</span>
+</div>
+    <span class="k">def</span> <span class="nf">_get_timestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inst</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">get_starttime</span><span class="p">(),</span> <span class="n">inst</span><span class="o">.</span><span class="n">get_endtime</span><span class="p">(),</span> <span class="n">inst</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+    
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="o">+</span><span class="s">&quot;{ icount = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_icount</span><span class="p">())</span><span class="o">+</span> <span class="s">&quot;,behavior = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_behavior</span><span class="p">())</span> <span class="o">+</span> <span class="s">&quot;,contents = (&quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;)}&quot;</span>
+    </div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">Semantic Analysis Framework 0.2a documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Arun Viswanathan.
+      Last updated on Nov 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b1.
+    </div>
+  </body>
+</html>

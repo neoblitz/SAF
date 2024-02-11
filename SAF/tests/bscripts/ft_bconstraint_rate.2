@@ -1,0 +1,16 @@
+[header]
+NAMESPACE = TESTS
+NAME = FT_BCONSTRAINT_RATE_2
+IMPORT = NET.APP_PROTO.DNSREQRES
+
+[states]
+# Create a state that captures a single DNS flow
+# Each matching instance of this state will contain two events 
+# (req_event, res_event) 
+dnsflows = DNSREQRES.DNS_REQ_RES()[bcount>1]
+
+[behavior]
+b  = (dnsflows)[rate > 100]
+
+[model]
+FLOWRATE(eventno, eventtype, timestamp, timestampusec, sipaddr, dipaddr, protocol, sport) = b 

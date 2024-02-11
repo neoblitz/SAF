@@ -1,0 +1,28 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//tcpudpdns_mix_298rec.sqlite' ..
+Found 298 events in database
+	PACKET_TCP - 248 events [ Fri Dec 18 20:43:52 2009 (1261169032) to Fri Dec 18 20:44:14 2009 (1261169054) ] 
+	PACKET_UDP - 38 events [ Fri Dec 18 20:43:56 2009 (1261169036) to Fri Dec 18 20:44:15 2009 (1261169055) ] 
+	PACKET_DNS - 12 events [ Fri Dec 18 20:43:57 2009 (1261169037) to Fri Dec 18 20:44:10 2009 (1261169050) ] 
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/tcpconntdown.b'..
+Processing model TCP_CONNTDOWN 
+    QUALIFIER matched 248 instances
+    State tcp_pkt_piggyfin .. found 9 instances
+    State tcp_pkt_finack .. found 1 instances
+    State tcp_pkt_ack .. found 1 instances
+  Behavior bpiggy .. found 1 instances
+    QUALIFIER matched 248 instances
+    State tcp_pkt_fin .. found 0 instances
+    State tcp_pkt_ack .. found 0 instances
+  Behavior bclean .. found 0 instances
+Model TCP_CONNTDOWN satisfied by 1 instances
+==================================
+Instances satisfying TCP_CONNTDOWN
+==================================
+Total Matching Instances: 1
+( ( 218 286 ) 287 ) >> TCP_CONNTDOWN.bpiggy
+----------------------------------

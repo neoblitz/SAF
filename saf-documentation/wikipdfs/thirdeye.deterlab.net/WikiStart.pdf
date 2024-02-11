@@ -1,0 +1,1015 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 6 0 R
+ /F4 7 0 R
+ /F5 8 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+4 0 obj
+% Page dictionary
+<< /Contents 63 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 62 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page2': class PDFPage 
+5 0 obj
+% Page dictionary
+<< /Contents 64 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 62 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F3': class PDFType1Font 
+6 0 obj
+% Font Courier-Bold
+<< /BaseFont /Courier-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+7 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F5': class PDFType1Font 
+8 0 obj
+% Font Helvetica-Oblique
+<< /BaseFont /Helvetica-Oblique
+ /Encoding /WinAnsiEncoding
+ /Name /F5
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Annot.NUMBER1': class PDFDictionary 
+9 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/browser/trunk/SAF/knowbase/net/base_proto/tcpconnsetup.b) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 71.02969
+ 591.5949
+ 167.3222
+ 602.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER2': class PDFDictionary 
+10 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/ExampleDNSKaminsky) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 389.9447
+ 591.5949
+ 462.8747
+ 602.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER3': class PDFDictionary 
+11 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/logic-based-modelling) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 156.0497
+ 559.5949
+ 259.8497
+ 570.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER4': class PDFDictionary 
+12 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/howisitdifferent) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 74.77969
+ 467.3449
+ 218.1722
+ 478.5949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER5': class PDFDictionary 
+13 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://www.usenix.org/events/nsdi11/tech/full_papers/Viswanathan.pdf) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 87.70219
+ 454.0949
+ 264.6122
+ 465.3449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER6': class PDFDictionary 
+14 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/simpleanalysis) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 54.76969
+ 440.8449
+ 194.8172
+ 452.0949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER7': class PDFDictionary 
+15 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://www.python.org/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 99.78469
+ 380.7386
+ 125.2172
+ 391.9886 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER8': class PDFDictionary 
+16 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://www.sqlite.org/download.html) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 166.0772
+ 380.7386
+ 191.0897
+ 391.9886 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER9': class PDFDictionary 
+17 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/svn/releases/saf-v0.2a.tar.gz) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 215.5984
+ 306.9886
+ 292.2934
+ 318.2386 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER10': class PDFDictionary 
+18 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/browser/trunk/SAF/CHANGELOG?format=raw) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 385.6772
+ 295.7386
+ 430.6997
+ 306.9886 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER11': class PDFDictionary 
+19 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/newticket) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 167.7422
+ 272.9886
+ 182.7497
+ 284.2386 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER12': class PDFDictionary 
+20 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/oldreleases) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 126.0497
+ 252.2386
+ 141.0572
+ 263.4886 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER13': class PDFDictionary 
+21 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/dependencies) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 54.76969
+ 231.4886
+ 102.7097
+ 242.7386 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER14': class PDFDictionary 
+22 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/installation) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 54.76969
+ 218.2386
+ 130.6322
+ 229.4886 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER15': class PDFDictionary 
+23 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/copyright) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 54.76969
+ 204.9886
+ 188.1572
+ 216.2386 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER16': class PDFDictionary 
+24 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (mailto:aviswana@usc.edu) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 259.4522
+ 118.7386
+ 322.3997
+ 129.9886 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER17': class PDFDictionary 
+25 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/newticket) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 520.4297
+ 118.7386
+ 537.9347
+ 129.9886 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page3': class PDFPage 
+26 0 obj
+% Page dictionary
+<< /Annots [ 9 0 R
+ 10 0 R
+ 11 0 R
+ 12 0 R
+ 13 0 R
+ 14 0 R
+ 15 0 R
+ 16 0 R
+ 17 0 R
+ 18 0 R
+ 19 0 R
+ 20 0 R
+ 21 0 R
+ 22 0 R
+ 23 0 R
+ 24 0 R
+ 25 0 R ]
+ /Contents 65 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 62 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Annot.NUMBER18': class PDFDictionary 
+27 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/simpleanalysis) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 54.76969
+ 763.7011
+ 194.8172
+ 774.9511 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER19': class PDFDictionary 
+28 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/applications) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 159.7997
+ 750.4511
+ 261.0872
+ 761.7011 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER20': class PDFDictionary 
+29 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/browser/trunk/SAF/knowbase) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 120.2147
+ 737.2011
+ 174.4097
+ 748.4511 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER21': class PDFDictionary 
+30 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/logic-based-modelling) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 43.51969
+ 656.3449
+ 111.4472
+ 667.5949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER22': class PDFDictionary 
+31 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/logic-based-modelling) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 618.5949
+ 175.6472
+ 629.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER23': class PDFDictionary 
+32 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/languagesyntaxandsemantics) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 605.3449
+ 177.3272
+ 616.5949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER24': class PDFDictionary 
+33 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/modelanatomy) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 592.0949
+ 156.4697
+ 603.3449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER25': class PDFDictionary 
+34 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/logic-based-modelling#interestingrels) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 578.8449
+ 156.8972
+ 590.0949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER26': class PDFDictionary 
+35 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/logic-based-modelling#languagelimitations) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 565.5949
+ 183.9872
+ 576.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER27': class PDFDictionary 
+36 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/knowledgebase) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 43.51969
+ 552.3449
+ 102.7022
+ 563.5949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER28': class PDFDictionary 
+37 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/composemodels) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 503.3449
+ 224.8247
+ 514.5949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER29': class PDFDictionary 
+38 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/plugins) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 43.51969
+ 490.0949
+ 139.3697
+ 501.3449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER30': class PDFDictionary 
+39 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/logic-based-modelling#Events) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 359.0597
+ 476.8449
+ 381.1547
+ 488.0949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER31': class PDFDictionary 
+40 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/p2db) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 98.94469
+ 465.5949
+ 145.6322
+ 476.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER32': class PDFDictionary 
+41 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/normalize#apache) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 149.8022
+ 465.5949
+ 174.4022
+ 476.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER33': class PDFDictionary 
+42 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/normalize#syslog) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 240.6797
+ 465.5949
+ 261.9347
+ 476.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER34': class PDFDictionary 
+43 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/normalize#mysql) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 294.0347
+ 465.5949
+ 313.6172
+ 476.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER35': class PDFDictionary 
+44 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/plugins) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 441.0949
+ 147.3047
+ 452.3449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER36': class PDFDictionary 
+45 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/p2db) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 427.8449
+ 216.9122
+ 439.0949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER37': class PDFDictionary 
+46 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/howtowriteplugin) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 414.5949
+ 198.1622
+ 425.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER38': class PDFDictionary 
+47 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/analyze) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 43.51969
+ 401.3449
+ 179.3972
+ 412.5949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER39': class PDFDictionary 
+48 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/analyze#commandline) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 363.5949
+ 133.5347
+ 374.8449 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER40': class PDFDictionary 
+49 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/limitations) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 69.76969
+ 350.3449
+ 217.3097
+ 361.5949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER41': class PDFDictionary 
+50 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/architecture) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 54.76969
+ 294.2811
+ 152.7197
+ 305.5311 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER42': class PDFDictionary 
+51 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/upcomingfeatures) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 54.76969
+ 281.0311
+ 146.8997
+ 292.2811 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER43': class PDFDictionary 
+52 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://thirdeye.deterlab.net/trac/wiki/VisitCounter\(WikiStart\)) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 345.3272
+ 251.7811
+ 425.3372
+ 263.0311 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page4': class PDFPage 
+53 0 obj
+% Page dictionary
+<< /Annots [ 27 0 R
+ 28 0 R
+ 29 0 R
+ 30 0 R
+ 31 0 R
+ 32 0 R
+ 33 0 R
+ 34 0 R
+ 35 0 R
+ 36 0 R
+ 37 0 R
+ 38 0 R
+ 39 0 R
+ 40 0 R
+ 41 0 R
+ 42 0 R
+ 43 0 R
+ 44 0 R
+ 45 0 R
+ 46 0 R
+ 47 0 R
+ 48 0 R
+ 49 0 R
+ 50 0 R
+ 51 0 R
+ 52 0 R ]
+ /Contents 66 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 62 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R54': class PDFCatalog 
+54 0 obj
+% Document Root
+<< /Outlines 56 0 R
+ /PageMode /UseNone
+ /Pages 62 0 R
+ /Type /Catalog >>
+endobj
+% 'R55': class PDFInfo 
+55 0 obj
+<< /Author ()
+ /CreationDate (D:20140915113800+08'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (pisa HTML to PDF <http://www.htmltopdf.org>)
+ /Subject ()
+ /Title () >>
+endobj
+% 'R56': class PDFOutlines 
+56 0 obj
+<< /Count 5
+ /First 57 0 R
+ /Last 60 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+57 0 obj
+<< /Dest [ 26 0 R
+ /Fit ]
+ /Next 58 0 R
+ /Parent 56 0 R
+ /Title (Semantic Analysis Framework \(SAF\)) >>
+endobj
+% 'Outline.1': class OutlineEntryObject 
+58 0 obj
+<< /Dest [ 26 0 R
+ /Fit ]
+ /Next 59 0 R
+ /Parent 56 0 R
+ /Prev 57 0 R
+ /Title (Download and Installation) >>
+endobj
+% 'Outline.2': class OutlineEntryObject 
+59 0 obj
+<< /Dest [ 26 0 R
+ /Fit ]
+ /Next 60 0 R
+ /Parent 56 0 R
+ /Prev 58 0 R
+ /Title (Quick start) >>
+endobj
+% 'Outline.3': class OutlineEntryObject 
+60 0 obj
+<< /Count -1
+ /Dest [ 53 0 R
+ /Fit ]
+ /First 61 0 R
+ /Last 61 0 R
+ /Parent 56 0 R
+ /Prev 59 0 R
+ /Title (SAF Components) >>
+endobj
+% 'Outline.5.0': class OutlineEntryObject 
+61 0 obj
+<< /Dest [ 53 0 R
+ /Fit ]
+ /Parent 60 0 R
+ /Title (Additional resources) >>
+endobj
+% 'R62': class PDFPages 
+62 0 obj
+% page tree
+<< /Count 4
+ /Kids [ 4 0 R
+ 5 0 R
+ 26 0 R
+ 53 0 R ]
+ /Type /Pages >>
+endobj
+% 'R63': class PDFStream 
+63 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 392 >>
+stream
+GauIq:J8SZ'EIWLU#4fL2o2jSs-iSgiHk&M)YC=.SQ3"uX_*^#Df8g%T]0K)j1uu$-+mU+6V'T&OI$Ele3HnS+9h?:a9`)m%5SYf06&fj14J#OMD-ZnKM2cJ-,jj'b5m:>_]I2C;cLRcN^<t51rY\%ALR`1!"'na;UK\^$JO+!b!Zb3LN&;.]!Z>Nltkurg3)^9Qkc!H!BC)^c@;0Q9en3J;5o^FnEbp0'8fte(o3*=51&/_TuQ:TW3LeMk>9`(eU"i\8R$'*>J#U+<DC0mg_ps'E`+I.V`o]R,'d:\i=Y2;h5XfX*6aUhpTo8WQdGatkptpmFe^9M13O0%:$oBtC\'5IqF%41@Hc5`e,3"cX3-208TfV/5n8]2bAqSr$utnD%;j#`~>endstream
+endobj
+% 'R64': class PDFStream 
+64 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 590 >>
+stream
+GatUo_/?#%&;KY9nd]_7/&ghZ0plJ)h+0'hd&NE*dYeo49*=n=:dt9TCIk.0P=Dq#(:)//rr3pu&Z?f(IZkE&9#7to!]!Rk^jlQ\DW$;=cX,=^DrC^A!oks=8L\(&kPjs:!5]A\4VCVP9YbO0oBEM]N/.lGW"O>K8VCE6Jk?'+pg>c0(l=&^SBuGh7p,]3\,!/L9asbJ3*X8%/[PVF,u;Mrp+amn$W,0B/n'$m\"U<IkK@7Q7)WQO_IbNVL^?O!k;\3PomREISacN-j[a>'"=uNJ3KCU[o#NRaJrEXb\4/c;`6KiJrc&hSB34?T70[o;f@JH>WV^^sXD]LS,&+9bDjRmieM\Ic)ikH^mbMY$3gt\BmfB/`J)gO1d!bF#pK=IiSL:Ws](fLk's*rYZ^l5CGZ`b)ediQE=aC3'$0*1ukTf_*_Y7-Ei;MIBG#*uoi1*3a$Llm>9OW&Ng8+5e<4+=c?0Bdt_k(]&X5qM!c6Vnkf0%`<kB6GWe>\=4-/Br9eE![<J!oC?CHd-88$nI[LUb/JE9UNQ7V*^#a0;U$c("^_"h:Y>Y:dpd,+hr6kB0"E]3i@$p('XELd(~>endstream
+endobj
+% 'R65': class PDFStream 
+65 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 3590 >>
+stream
+Gau`VflGh:(4CCls.LO3.S<<bcr^PtDk8p\-'NQn>;Pm1QR:')&V0qADM[;"rLDVE#_4EN9bO@?''SG[kFTC^c><F;k3m!&f\c/Nm2]ip@J=i_4j.@0^TnsMhnJo$ro`rnc`qj=:-pkHD9E5k(R'1J34n.o1Fo\8meCVip'm>Nm>c`TSbVQ#`SAhK!ffE\FrrNc/I]Y-,Y2>=,`-C;'FT*WTB%0k=<s;H2f)g]/+t\n7D\D'[*8(t?R/NtbO5C<pYW6FrjnoEn)jYRSI^&c3MGP.keg%MEdYp5?'eomOk\%5T63EU,9dAA?j2*CH'-/g+e=$)Ik6Jipn$;u,aC+53D4E*ZZVC#;Q7<:7Yf_[\!_O76#P1X.b(cOmR$LMDID/Co5pC(^?Z2mnb/7DO;jmr.]KUP+tEFbntPld<O;EV'.XspSp]!:rCubV4>4$cX<$ZSZ@21`(l!T'Ff'M/i3pTFf63-"I*8/QSS.K<SH]1KI$Q:Fkp0a,16HHSU=``Pm5B7[^qO'%IWtPJgQCJkHu;Y*JTme,c[P6Fk@&3koWu=$B*_haAXdjE%*Al!8#+o\_4/d6Bp)%'$S@`Z9T[S'-8c6!`/?0YEM@Q;bY!l`C9+^H2)A]BaE8Ykbd:i*.9TUc"hl[e`Br!FZ$_dM^0]4),f:=^B8\mo(6)V'BY#Ud-'NDkUfes@PA44%<h`=3X8?I+`'8/$^30e45@gQA#2P]k`%712PtDgLP.&e5ee/@U6]=N<<,.X)i\4Af!d<J,PnY)WcHDH/)3br":@_)Hq0H3'K4^k.+=/%2PigVYG(]!M_%?Iq?"43n%o^uTbLa$2[%,*aa>9p"1hOPkRm\ohg3=A\1d\!"Y@n"6jD-3dd+H'o?d#7,3utAEAOeI@$d5*.q<"Oe'uC5^]<kK$;5@gc*);r4IU`h'P8[l[10LZXnBfn?fX,U7/*%ME`EB!#:eo^YY5Ck2&0]h@P0Jm^6"V[n2]:*i#AnJpe4CEi[U':eeS'XBCG*s)kEMRqnlVcbMNMkRI!u&*F1K+K+00CRIX:l<@h+1/*)p(1YS.X2Xu3UAY^MhCcSX)C-C383^&hJlQKo':*]=@%%2%T+iob322^sH2cW:2C,+jr#g'"_*+rIOZ`auGXf"lhe05#;S*YU(Ne3<@Y.)8mE'X`udD:VkV%Vs-5Z!+'r\kTmSc7466Oo$4aZ7+$SBtsm$Vos4jIQOd^(id4>AK`R[D+/.BVK?DT=0(h*Ds-j:5-o`p<Ka>:/c4qrNnmF@@+&8r=?Rgd+.Ga6bK$DU2`AKj6$ntT[6hV83/:9\\+=,IDb!.?7,+QcB<29\"S-Gf6u/3YZGoj1rZ2uHG^4Be6i+ffB.;n>OY'1ia+;JeFq7C9NM=ShR)B^*h$O<jQB1f55"@`";'#:)</stV\9?h8PpisEmmr[8Ul!r7,B](Wf^G7EWiC8ra7:ZOJYST'035D)'>"SgbI'_N@Gme@bWm*m/CMYK._/`.g>Y%0E.%`S#XE_Hi3jB]3IpDrE*l<:Sqi,E9ZBNl-p'8'LIaYg7E./>'Y(VU,8^fn\Y46!'YT/2TO+Z;$k]l9qH?8t;R<l<Xmo,]J5oX`H&tH!cW4BY0A#M(;/'F9HIrCY*TK9)b%Q8l=D$:p[42+LE1<e%'n\5c:Sa*U662n>'i&t4n1V+"-p]AP"Q@45b2_<<6k\e,L@(oF!K4=9U9cUHA+3PkJg)_r\R?EIa\[g_D]7m4OQ@EXfnD6g0K.k&#sTBuLSMKq,U!=c)_"9a>^bQs@,rQkNW:])g6jXZq&4-27D+\$bp.kMHcULVIJY:0XrbCA1>`p9[VW;[DT#eB$b.KXk2<:T=MKe*EoZ!tS$&[VH6nn=_jd7";h(f'4O<$9NpT^B*,aHgX1BN/MkNf/PPp9_msk=kF.`X9*@YFPFQ,.5pWj\o]AD4n_k1]=b&!V"^k(ALK,:#j1@M-H6RLN#YM&")AFhkE4>t3I%"MtXJ,N9u_63/jT2qg=477b_NCNBs41jJ$65H-[DnT1Yk<2Ys2!Tn"r!\11nmDgSaL$/>a)X3'c_.38"DI%Dl04F:'+0sf5=It#fZk"RA%@BA#f]bFHdj3r=q3V$HT9>9DY:<D=pJ?TWi4q,:c^`+oC'F@H:W!L*MuG"FW8;k#R2'=7[2>H6!T`lY+(H-oSO5>/L=l=1mu]48Wn\$2:&EC#TMEogspQWZ66,KZX8otHnm3^B"]%kJiO#jC@$I-Fh:W8bTonO-NPp#ZSO<ED0e=mZu'ah&=RhIbp)RR)Em4\`hZtb"^8H%)cgMSl91FC3)`(5'8hcHNVC]2Kl-60SBe6*)lrJAB7aP/`-?8hJ">sZf?b8B^^g+SFi=A6rEe\gl'q[jdgG[H+pHHRQ"6Htn9StkM9MSA5IY+rkFNIDV;<aLn`tu?o^M3e@^?TUmb@j9=#a]2/;_htn1*So]L-]]^`Y_K[Ja=T]CtYd^+`7#b2($M@LGmN%jjPS^O7f;iZ0%8=)]JJ2ifAE_U>0_(B7rQXpbB^2[L^dFrO==#DDa,#VFB3p:@h^^1BCO.HSDE0<-Nc]UU?FW"EaHc(2_Q>c7j]#rkeDJYAW0"[OC+'k2nbRkbHDO4?Q#O\p0lPhKB\27%I<Dt_E/,j9>N:.)-Ne:t:o?n1%<eoE\HQRkU'[]'[j_VAQ`pf84%MA"U5-QRMT@`FKtS_h6n/`X3jq_Ts%c5_f2n&Y[dZ73'(mF_tc?CmZI(d2-AD!cQ,Gnfc.2JK'H@kLns0PS&H1%SbXf-S_p>N_ALcFpD*Y4qF)clJKt..0k-lem6Z;#AJLcG4F;\R:29U4(]ESak`FEkt3]32!b'jbG5h-.8AIlTE$)cZ5QTd1micma6[Q`A_]m8j=S(Cc^$\]#O-Q]qVRH@;A@KHO]JLN7aU^pM`#J<sLf[K[@h(EJD6\'`Ukk<)FGVkl6HZ7:"7>L\_KU_Im?:0C=_nTuFq$BoBWBDB+gJE?A[EIf;&$QPp8[4O.<j^oL/[m<[]<?el;kqu#.@j'd0JI/_i#SEF%=;e\A:J3W,\D36B8RQ+jk<R$@7+#84=1:f0m[?P!6cXUJ)!WK@q)+Q1ErG^uYD^_WWq*o2"ag$q-O(3BhPB<rd7$_K?<F./mcYr@_i3+1X;ZKdko3tqu:KC@HF2Rn,Kq->\!6%arCn$c-PGfepKNR&.(J8PNB_Ol]_%?\oV)hM9-g"<o)et;E92h.XW9@&rAq's7_h]0:SE2'0LBC!ibQ]T5ZajmHeEErKmeT)uTXm4YLI8u;?g?'=%&g<".(TS`qVC#^`"6h!c@P]EU>3)PG$oWO[Pam>:qa(jp"\Ij+9\"rL*dI:X8S`"fT1WqM>+L9Du&>EhY3uKbJC%+lgJb12>od5DP`&NROh;3XA%n`be42ZA.Q.Dms9q`!Sc)dQ$J/^<p96q8HPFBVgX6>R"s.?a?.;POFBCb$A>)77Z'6t,29Ps_/#pj`M0rkUq=V2n;EJcKr1ZUUpN,:?$urVZ@=6:,;PsZia@,A_nrPq$J%cUoCF^'Y37>k7rb@Vf^%Z$p)^#Y+]%(*2^l;AELd)b\XqgcJ')oNmj/B.(ffc5b-SQqrWfgU&>&~>endstream
+endobj
+% 'R66': class PDFStream 
+66 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 2687 >>
+stream
+Gb!#^gQL=$&Uekgs.LNI;]^VMSU&nWoraKp2CW:@9e'.lJOjI-$u[K.d3r@o#'^_/%5jl8M,h"))R9B%qJuFS;\Ue\6d<q:"8H:.^]-QMg9B92FbpL,?f7j4gG`K`?eUCL2XtJA7hAi>Yp7<*`?PBj\$Wb:!m@:G#J7H`E-p;'0d*1Y_(#O7Z:I7NR22k:TTl*'5#s0H&5R(NR6T4bh#()5Ll[hB(#6['.Pgd$Uo]._O10Cs(AEF(mpPg,=T&_Ia8>.#r8%;L1AGg/,!.!WY<T\^7(-_AbAl_l-ZXQ^a/bfZG=(E,$V1ggr]-79f5mT]U_W7(R_3Y3R0J5i=R.n"7'lWkIsh,?D\)1Jf*_Zk18#[pLk<O@'L%LUC)6GV9c8m.%=YF#?m%m=VAr^`d_->-p_,G"C+8_#piQ8H.,!pg%=DReN6F:.j1<18YKGoiZ,;.;D2OhYYIAeP_G<s=>#`/@Z@lZh'kcduY,KbOH<W<Lb)1kMg'taj!aZaJHqMDp6X3P6"?u@N;'n7<$);'[U:)'$\uI`AifPH,nm[sVjIX8X8NsT]NV9(9PU%7P?0[?ASYp"7qZrF0qT$pAJZREfqGRS>`@BmB)Q8WaVP!3F/dX-(4?>u`'4NR6UGG)eg5b83bBh)7BkL[ThfH.l7L$kOL%e#:(-.gacEr]U:dY,rI8q:J*rr>n8,"h;[jgSL*r$f9?<ur(4MY4RqOU,\HEl2A@(->[mKY#Cc[a@5B=(INri[?,Ub'9affbsS*nqpejl^pG,Lcf6&P=_J$"V(;"4eisRRG[DMltI"--o\r7!pClAQ?ZRU2Z^fc]989m-MYmRdLc0;uVTf!aA;tYuli,Q_4\A=fH/k)[2V>\.tin<'9dg]89ZB=Xqr#*>DMjO[\*@6\Y(84CYtITAgQY)HZ5DfimI]?:LWAQTS&?&31N-\_;%p_cGQ2Dc%gPK%s#<1FPk%261?0*jpk)6HY8#o"W1_gHQl;Nf=lr-E`gA(D<,XQpg+Q#OkVK2HIK5KH[YuA$irR%JWV1G@U.+Crc$Qg(dhcQOY6Y(eBLFE@iJTed\3)f0<RU]nd-Tg-6(5LSaq?9:*A5T.BVGN7fMPI).u1\[AXTC3q'nS"]u0i[nt+dlBPF0;8DTWVOP__9@oTo#_t^;N^?(LpAAc6,o0<eYu&f*(Bj1Vd#cG]1OKB.IA1_D'%=_es1/jF,)`kijljsapO8"4RsKl4(n0@(2I7#EjU($A"J4l8(fWOl<\T"'uEE=FKY#"AbGdLX\VA4<*P5anhB&j06eTmeBeN%8D&Ag=%p`GrXr`ST0u%n!AaJ;droEEJ[%^i.JB?GP*;[SRmH4(U(?9b:,>M)/'Z,A5IG\Q;STN!65>ad8*"SkO[G*PPuLk81to?4a,6&ig->@,U5[4E>3Ze<dU6R+gTX?,<uanWUM1gR>2n.kkn9o'@&_W`E`Is=X\=3oWki$,j>7#=gut#E<l(Za7IV>a:m:fSBKD#0n\@XA^o`]W@csLpM=ml[RUM]C"u1'A\(E(aU5HDpYM4[<CjcDe7*_Td0Q*@6`=A[`D3cF$/ZK&_F[L1^;d20fY+7V-PW75lbdJ:$15MTGgR62r-o;:7Er`X#G%gbY[nU(#f!r=Q]4Wo<ee*&GM-%6(8g\ZC2#1&M(O792!8`1S@@LbAA!?X/;_=Y9l[,G'F-#aD?]3[!SufG0LWK4Y_`:IWI)e<R1?Y-/mWlaiX#.WhD-U8sEm`i'ZTcDKHK'2qXN,,8F2I-7l46=#Wm>o>BmUV!@C3'U=N&YJl`ofW@=?j:)Eo6gV4_;0#)s1I=MA^()\IrNXpah/"uu0.,RM^"H:ktK#-nN`h$!'5GQKJ18?qbfr@FpHJNYcNZ?9o^7?=UB\iSH'*`B<=JLa:VX?:s]]44uu_V5aldYo/BII'^;,Hs*f=buj22iean=]9j2-dd;:-%/g_J?Gos@1b+o`\kUTVCpM(mig`]QK:GFVJrdc6,Oogp"!fC[mdFVAN&$thR,:]Q:$6[(cAL`5ccm2>9@9@R-GEW@mHMiHT)^J2\qr-Z*Q"V[m:dELhK\iHd/9pZ*]]P`at9]]hPWug3YEt-,.!U:&flOUJLH;`;]`Q8m3;#ofVe(9t*!-93'MS3dXOX^X`Q%1(KJ&"aV_W&/:_*(0o'MmQ04+iV;H;2LXf53"m>RXM=f()1Kp2&#DRsLN\i6%7G=h9-0"N^hPajJ$=i%73dKq(7+HeX_H6!AXc;.HC$!8^[J<r[#s/1]DQN#;S#?j`MQp[fVG@])j.V5#0NZ<9g>R6e=>K[<MHG:LbWCSG2)#$_3JLqK[br5KE-FJ6;a1Sb=`MfcFUU;eu`M@jJ?(-W,Ar$m^h$,.q14@VVbi92<$[A_65J',F_HM36/30Q[!$-TOd9]oIP6\V*$[rGn1l,Rmpfo=UkaDo8:,q?+f@Q8&086,XP^sV$I:2W2l<3D>ifT,`[(;?_KIT/s1i8?fm87G?)9jMT=kmBcD,s%lHF612gI+"d+[sbEu+U7A>3G-+i,F.8'OOOtU=].2h"j^:!Ub95I[*@a=jgC@GZZnZ0\=S.I@$fpp33NfgRD!VSs!hA,=DW#g*opnZO`<39A:ID_"-lS;n+pQO/K?__^IKLQX$J)PR^iA]NMlFbEn]_]Nc$iLTaqgD?)MH?FppFl'9Q2:F7pD5h,hS/e=@\3/n~>endstream
+endobj
+xref
+0 67
+0000000000 65535 f
+0000000113 00000 n
+0000000257 00000 n
+0000000422 00000 n
+0000000595 00000 n
+0000000874 00000 n
+0000001155 00000 n
+0000001326 00000 n
+0000001487 00000 n
+0000001680 00000 n
+0000001988 00000 n
+0000002264 00000 n
+0000002543 00000 n
+0000002817 00000 n
+0000003104 00000 n
+0000003376 00000 n
+0000003617 00000 n
+0000003871 00000 n
+0000004149 00000 n
+0000004441 00000 n
+0000004704 00000 n
+0000004974 00000 n
+0000005245 00000 n
+0000005516 00000 n
+0000005784 00000 n
+0000006027 00000 n
+0000006275 00000 n
+0000006734 00000 n
+0000007007 00000 n
+0000007278 00000 n
+0000007558 00000 n
+0000007838 00000 n
+0000008118 00000 n
+0000008403 00000 n
+0000008674 00000 n
+0000008970 00000 n
+0000009270 00000 n
+0000009542 00000 n
+0000009814 00000 n
+0000010080 00000 n
+0000010367 00000 n
+0000010630 00000 n
+0000010905 00000 n
+0000011180 00000 n
+0000011454 00000 n
+0000011720 00000 n
+0000011983 00000 n
+0000012258 00000 n
+0000012524 00000 n
+0000012802 00000 n
+0000013072 00000 n
+0000013343 00000 n
+0000013618 00000 n
+0000013887 00000 n
+0000014414 00000 n
+0000014552 00000 n
+0000014787 00000 n
+0000014912 00000 n
+0000015082 00000 n
+0000015257 00000 n
+0000015418 00000 n
+0000015612 00000 n
+0000015736 00000 n
+0000015869 00000 n
+0000016403 00000 n
+0000017135 00000 n
+0000020868 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\270'\317\253\361\245\374\230\343k\231\370\240\214\361\356) (\270'\317\253\361\245\374\230\343k\231\370\240\214\361\356)] 
+
+ /Info 55 0 R
+ /Root 54 0 R
+ /Size 67 >>
+startxref
+23671
+%%EOF

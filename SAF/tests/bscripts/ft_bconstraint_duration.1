@@ -1,0 +1,15 @@
+[header]
+NAMESPACE = TESTS
+NAME = FT_BCONSTRAINT_DURATION_1
+QUALIFIER = {eventtype='PACKET_ICMP'}
+IMPORT = NET.BASE_PROTO.IPPKTPAIR
+
+[states]
+sA = IPPKTPAIR.ip_pkt_sd()
+sB = IPPKTPAIR.ip_pkt_sd(dipaddr=$sA.dipaddr, sipaddr=_ANY_) [bcount >=1]
+
+[behavior]
+hypothesis_1 = (sA ~> (sB)[bcount >= 59])[duration <= 1s]
+
+[model]
+DDOSATTACK(eventno, eventtype,timestamp,timestampusec,sipaddr,dipaddr,eventtype) = hypothesis_1

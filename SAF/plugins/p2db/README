@@ -1,0 +1,67 @@
+p2db v0.1
+===========
+Arun Viswanathan (aviswana@isi.edu)
+
+
+Setting up
+==========
+$ sudo python setup.py
+
+Building
+========
+$ make clean
+$ make
+
+Running
+========
+$ ./p2db <pcapfile> <output database>
+ 
+NOTE : If you have multiple PCAP files merge them using the freely available 'mergecap' utility.
+ 
+ 
+Output Snapshot
+===============
+
+$./p2db /data/work/projects/@isi/ThirdEye/data/attack4.anon packets.sqlite
+
+Processed 6943780 records in 588 secs (0.000000 sec per record)
+         TCP Packets: 3858720   
+         UDP Packets: 354922    
+         DNS Packets: 1429337   
+        ICMP Packets: 1268298   
+          IP Packets: 0         
+  Invalid IP Packets: 0         
+        IPv6 Packets: 0         
+     Unknown Packets: 32503     
+
+$ ls -lh packets.sqlite 
+-rw-r--r-- 1 arun arun 819M 2010-08-22 13:12 packets.sqlite
+
+     
+$ sqlite3 packets.sqlite 
+-- Loading resources from /home/arun/.sqliterc
+SQLite version 3.6.22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> select count(*) from PACKET_TCP;
+count(*)  
+----------
+3858720   
+sqlite> select count(*) from PACKET_UDP;
+count(*)  
+----------
+354922    
+sqlite> select count(*) from PACKET_IP;
+count(*)  
+----------
+0         
+sqlite> select count(*) from PACKET_DNS;
+count(*)  
+----------
+1429337   
+sqlite> select count(*) from PACKET_ICMP;
+count(*)  
+----------
+1268298   
+sqlite> 
+     

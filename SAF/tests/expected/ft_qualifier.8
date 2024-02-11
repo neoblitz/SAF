@@ -1,0 +1,29 @@
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+Reading input event database '../saf-data/db//tcpudpdns_mix_20rec.sqlite' ..
+Found 63 events in database
+	PACKET_TCP - 13 events [ Fri Dec 18 20:43:52 2009 (1261169032) to Fri Dec 18 20:43:57 2009 (1261169037) ] 
+	PACKET_UDP - 38 events [ Fri Dec 18 20:43:56 2009 (1261169036) to Fri Dec 18 20:44:15 2009 (1261169055) ] 
+	PACKET_DNS - 12 events [ Fri Dec 18 20:43:57 2009 (1261169037) to Fri Dec 18 20:44:10 2009 (1261169050) ] 
+Creating temporary directory for storing state /tmp/temp
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/ft_qualifier.8.b'..
+Processing model IP_PKTPAIR 
+    QUALIFIER matched 53 instances
+    State ip_pkt_sd .. found 53 instances
+    State ip_pkt_ds .. found 1 instances
+  Behavior b .. found 1 instances
+Model IP_PKTPAIR satisfied by 1 instances
+===============================
+Instances satisfying IP_PKTPAIR
+===============================
+Total Matching Instances: 1
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+     eventno      |    eventtype     |    timestamp     |  timestampusec   |     sipaddr      |     dipaddr      |     protocol     |      sport       
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                            Behavior: IP_PKTPAIR.b(2 events)                                                            
+        1         |    PACKET_TCP    |    1261169032    |      658165      |   192.168.1.51   |  128.9.160.161   |        6         |      33780       
+        2         |    PACKET_TCP    |    1261169032    |      688823      |  128.9.160.161   |   192.168.1.51   |        6         |       993        
+--------------------------------------------------------------------------------------------------------------------------------------------------------

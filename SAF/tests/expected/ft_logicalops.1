@@ -1,0 +1,81 @@
+
+#############################################
+#    Semantic Analysis Framework - v0.2a    #
+#############################################
+
+Reading input event database '../saf-data/db//nsdipaper_casestudy2_data.sqlite' ..
+Found 9138 events in database
+	PACKET_DNS - 9138 events [ Wed Jun  2 21:51:25 2010 (1275515485) to Wed Jun  2 21:51:28 2010 (1275515488) ] 
+Creating temporary directory for storing state /tmp/temp
+Initializing global symbol table..
+Reading and initializing from the knowledge base 'knowbase'..
+Parsing specified model : 'tests/bscripts/ft_logicalops.1.b'..
+Processing model DNSKAMINSKY_FAILURE 
+    QUALIFIER matched 16 instances
+    QUALIFIER matched 16 instances
+    State AtoV_query .. found 3 instances
+    State VtoR_query .. found 1 instances
+  Behavior initial_query .. found 1 instances
+    State RtoV_resp .. found 1 instances
+    State AtoV_resp .. found 0 instances
+    State RtoV_resp .. found 1 instances
+    State AtoV_noresp .. found 1 instances
+  Behavior b_1 .. found 1 instances
+    QUALIFIER matched 16 instances
+    QUALIFIER matched 16 instances
+    State AtoV_query .. found 3 instances
+    State VtoR_query .. found 1 instances
+  Behavior initial_query .. found 1 instances
+    State AtoV_noresp .. found 1 instances
+    State RtoV_resp .. found 1 instances
+  Behavior b_2 .. found 0 instances
+Model DNSKAMINSKY_FAILURE satisfied by 1 instances
+
+========================================
+Instances satisfying DNSKAMINSKY_FAILURE
+========================================
+
+Total Matching Instances: 1
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     eventno      |    timestamp     |  timestampusec   |     sipaddr      |     dipaddr      |      sport       |      dport       |   dnsquesname    |      dnsid       |     dnsauth      |    dnsqrflag     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                      Behavior: b_1.initial_query(2 events)                                                                                      
+       2721       |    1275515486    |      118260      |    10.1.11.2     |     10.1.4.2     |       6916       |        53        | i37wMaCelZuUSk.. |      47217       |                  |        0         
+       2722       |    1275515486    |      118372      |     10.1.4.2     |     10.1.6.3     |      32778       |        53        | i37wMaCelZuUSk.. |      15578       |                  |        0         
+                                                                                   Behavior: DNSKAMINSKY_FAILURE.b_1(10 events)                                                                                  
+       2723       |    1275515486    |      119010      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2724       |    1275515486    |      119016      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2725       |    1275515486    |      119760      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2727       |    1275515486    |      119767      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2729       |    1275515486    |      120011      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2730       |    1275515486    |      120509      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2731       |    1275515486    |      121009      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2732       |    1275515486    |      121014      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2733       |    1275515486    |      121509      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+       2734       |    1275515486    |      121514      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      47217       | fakens.fakebof.. |        1         
+                                                                                   Behavior: DNSKAMINSKY_FAILURE.b_1(1 events)                                                                                   
+       2726       |    1275515486    |      119765      |     10.1.6.3     |     10.1.4.2     |        53        |      32778       | i37wMaCelZuUSk.. |      15578       | authns.bofa.co.. |        1         
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Processing model DNSKAMINSKY_SUCCESS 
+    QUALIFIER matched 16 instances
+    QUALIFIER matched 16 instances
+    State AtoV_query .. found 3 instances
+    State VtoR_query .. found 1 instances
+  Behavior initial_query .. found 1 instances
+    State AtoV_resp .. found 0 instances
+    State RtoV_resp .. found 0 instances
+  Behavior b_3 .. found 0 instances
+NO instances found satisfying model DNSKAMINSKY_SUCCESS
+
+Model DNSKAMINSKY_SUCCESS satisfied by 0 instances
+
+========================================
+Instances satisfying DNSKAMINSKY_SUCCESS
+========================================
+
+Total Matching Instances: 0
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     eventno      |    timestamp     |  timestampusec   |     sipaddr      |     dipaddr      |      sport       |      dport       |   dnsquesname    |      dnsid       |     dnsauth      |    dnsqrflag     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
